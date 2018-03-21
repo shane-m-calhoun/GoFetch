@@ -28,7 +28,10 @@
         <activity
             android:name=".CreateAccount"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".DogProfile"></activity>
+        <activity
+            android:name=".DogProfile"
+            android:parentActivityName=".DogList"/>
+        
     </application>
 
 </manifest>

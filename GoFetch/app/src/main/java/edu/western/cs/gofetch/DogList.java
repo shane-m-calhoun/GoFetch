@@ -30,9 +30,18 @@ public class DogList extends AppCompatActivity {
         kenai.setBreed("Mini Aussie");
         kenai.setPoints(100);
         kenai.setWeight(25);
-        ListView dogList = findViewById(R.id.dog_list);
         dogs.add(kenai);
-        CustomAdapter adapter = new CustomAdapter(DogList.this, R.layout.activity_dog_profile, dogs);
+
+        Dog beacon = new Dog();
+        beacon.setFirst_name("Beacon");
+        beacon.setAge(2);
+        beacon.setBreed("Pointer");
+        beacon.setPoints(100);
+        beacon.setWeight(75);
+        dogs.add(beacon);
+
+        ListView dogList = findViewById(R.id.dog_list);
+        CustomAdapter adapter = new CustomAdapter(DogList.this, R.layout.list, dogs);
         dogList.setAdapter(adapter);
 
 
