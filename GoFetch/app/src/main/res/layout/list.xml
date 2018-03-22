@@ -11,4 +11,5 @@
         android:id="@+id/dog_name"
         android:textColor="@color/Black"
         android:layout_height="50dp" />
+
 </LinearLayout>

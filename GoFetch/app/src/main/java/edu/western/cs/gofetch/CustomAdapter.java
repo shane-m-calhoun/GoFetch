@@ -52,10 +52,10 @@ public class CustomAdapter extends ArrayAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, DogProfile.class);
-                intent.putExtra(DogProfile.EXTRA_POINTS, dog.getPoints());
+                /*intent.putExtra(DogProfile.EXTRA_POINTS, dog.getPoints());
                 intent.putExtra(DogProfile.EXTRA_BREED, dog.getBreed());
                 intent.putExtra(DogProfile.EXTRA_AGE, dog.getAge());
-                intent.putExtra(DogProfile.EXTRA_WEIGHT, dog.getWeight());
+                intent.putExtra(DogProfile.EXTRA_WEIGHT, dog.getWeight());*/
                 mContext.startActivity(intent);
             }
         });

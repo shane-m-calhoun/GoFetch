@@ -27,11 +27,36 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CreateAccount"
+            android:label="Create New Account"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DogProfile"
-            android:parentActivityName=".DogList"/>
-        
+            android:label="Dog Profile"
+            android:parentActivityName=".DogList" />
+        <activity
+            android:name=".BasicLessonList"
+            android:label="Go Fetch Lessons"
+            android:parentActivityName=".DogProfile" />
+        <activity
+            android:parentActivityName=".DogProfile"
+            android:label="Go Fetch: LeaderBoard"
+            android:name=".Leaderboard" />
+        <activity
+            android:name=".PuppyLessonList"
+            android:label="Puppy Lessons"
+            android:parentActivityName=".BasicLessonList" />
+        <activity
+            android:name=".BeginnerLessonList"
+            android:label="Beginner Lessons"
+            android:parentActivityName=".BasicLessonList" />
+        <activity
+            android:parentActivityName=".BasicLessonList"
+            android:label="Intermediate Lessons"
+            android:name=".IntermediateLessonList" />
+        <activity
+            android:parentActivityName=".BasicLessonList"
+            android:label="Advanced Lessons"
+            android:name=".AdvancedLessonList"></activity>
     </application>
 
 </manifest>
