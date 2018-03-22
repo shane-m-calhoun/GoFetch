@@ -3,6 +3,8 @@ package edu.western.cs.gofetch;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -51,4 +53,26 @@ public class BasicLessonList extends AppCompatActivity {
             }//OnClick for Advanced lessons
         });//SetOnClickListener for advanced lessons
     }//OnCreate
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.help_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }//OnCreateOptionsMenu
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.help_icon:
+                Intent intent = new Intent(BasicLessonList.this, Help.class);
+                startActivity(intent);
+                return true;
+            case R.id.home_icon:
+                Intent intent1 = new Intent(BasicLessonList.this, DogProfile.class);
+                startActivity(intent1);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
 }//BasicLessonList
