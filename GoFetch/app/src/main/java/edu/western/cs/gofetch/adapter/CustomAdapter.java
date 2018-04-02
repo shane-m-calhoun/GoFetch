@@ -1,4 +1,4 @@
-package edu.western.cs.gofetch;
+package edu.western.cs.gofetch.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,13 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import edu.western.cs.gofetch.Dog.Dog;
+import edu.western.cs.gofetch.DogProfile;
+import edu.western.cs.gofetch.R;
+import edu.western.cs.gofetch.model.Dog;
 
 /**
  * Created by Owner on 3/20/2018.
