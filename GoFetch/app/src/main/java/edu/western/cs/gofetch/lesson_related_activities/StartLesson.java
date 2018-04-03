@@ -63,7 +63,7 @@ public class StartLesson extends AppCompatActivity {
 
         switch (level){
             case "0":
-                points = 25;
+                points += 25;
                 break;
             case "1":
                 points += 50;
