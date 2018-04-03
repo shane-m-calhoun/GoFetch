@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".account_related_activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,58 +18,60 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddDog"
+            android:name=".dog_related_activities.AddDog"
             android:label="Add/Edit Dog"
-            android:parentActivityName=".DogList" />
+            android:parentActivityName=".dog_related_activities.DogList" />
         <activity
-            android:name=".DogList"
+            android:name=".dog_related_activities.DogList"
             android:icon="@drawable/ic_action_name"
             android:label="GoFetch: Dog List"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".account_related_activities.MainActivity" />
         <activity
-            android:name=".CreateAccount"
+            android:name=".account_related_activities.CreateAccount"
             android:label="Create New Account"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".account_related_activities.MainActivity" />
         <activity
-            android:name=".DogProfile"
+            android:name=".dog_related_activities.DogProfile"
             android:label="Dog Profile"
-            android:parentActivityName=".DogList" />
+            android:parentActivityName=".dog_related_activities.DogList" />
         <activity
-            android:name=".BasicLessonList"
+            android:name=".lesson_related_activities.BasicLessonList"
             android:label="Go Fetch Lessons"
-            android:parentActivityName=".DogProfile" />
+            android:parentActivityName=".dog_related_activities.DogProfile" />
         <activity
-            android:name=".Leaderboard"
+            android:name=".leaderboard_related_activites.Leaderboard"
             android:label="Go Fetch: LeaderBoard"
-            android:parentActivityName=".DogProfile" />
+            android:parentActivityName=".dog_related_activities.DogProfile" />
         <activity
             android:name=".PuppyLessonList"
             android:label="Puppy Lessons"
-            android:parentActivityName=".BasicLessonList" />
+            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
         <activity
             android:name=".BeginnerLessonList"
             android:label="Beginner Lessons"
-            android:parentActivityName=".BasicLessonList" />
+            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
         <activity
             android:name=".IntermediateLessonList"
             android:label="Intermediate Lessons"
-            android:parentActivityName=".BasicLessonList" />
+            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
         <activity
             android:name=".AdvancedLessonList"
             android:label="Advanced Lessons"
-            android:parentActivityName=".BasicLessonList" />
+            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
         <activity
             android:name=".Help"
             android:label="GoFetch: Lesson Help"
-            android:parentActivityName=".BasicLessonList" />
+            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
         <activity
-            android:name=".LeaderBoardHelp"
+            android:name=".leaderboard_related_activites.LeaderBoardHelp"
             android:label="Leader Board Help"
-            android:parentActivityName=".Leaderboard" />
-        <activity android:name=".DetailLessonList"
+            android:parentActivityName=".leaderboard_related_activites.Leaderboard" />
+        <activity
+            android:name=".lesson_related_activities.DetailLessonList"
             android:label=" Lessons"
-            android:parentActivityName=".BasicLessonList"/>
-        <activity android:name=".StartLesson"></activity>
+            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
+        <activity android:name=".lesson_related_activities.StartLesson" />
+        <activity android:name=".Main2Activity" />
     </application>
 
 </manifest>

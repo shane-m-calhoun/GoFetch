@@ -1,4 +1,4 @@
-package edu.western.cs.gofetch;
+package edu.western.cs.gofetch.dog_related_activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,15 +9,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
-import edu.western.cs.gofetch.adapter.CustomAdapter;
+import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.model.Dog;
 import io.realm.Realm;
 import io.realm.RealmResults;
-import io.realm.Sort;
 import edu.western.cs.gofetch.adapter.CustomRealmAdapter;
 
 
@@ -37,6 +39,9 @@ public class DogList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dog_list);
 
+        RelativeLayout buttonLayout = findViewById(R.id.first_dog_layout);
+        ListView dogList = findViewById(R.id.dog_list);
+        Button firstDog = findViewById(R.id.first_dog_button);
 
         realm = Realm.getDefaultInstance();
 
@@ -44,8 +49,11 @@ public class DogList extends AppCompatActivity {
 
         mDogList = new ArrayList<>(mResults);
 
+        if(mDogList.isEmpty()){
+            dogList.setVisibility(ListView.GONE);
+            buttonLayout.setVisibility(RelativeLayout.VISIBLE);
+        }
 
-        ListView dogList = findViewById(R.id.dog_list);
 
         mCustomRealmAdapter = new CustomRealmAdapter(mResults);
         dogList.setAdapter(mCustomRealmAdapter);
@@ -68,6 +76,14 @@ public class DogList extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        firstDog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DogList.this, AddDog.class);
+                startActivity(intent);
+            }//OnClick
+        });//setOnClickListener
 
 
 

@@ -1,4 +1,4 @@
-package edu.western.cs.gofetch;
+package edu.western.cs.gofetch.lesson_related_activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import edu.western.cs.gofetch.dog_related_activities.DogProfile;
+import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.R;
 
 public class BasicLessonList extends AppCompatActivity {
     //Array less[] = ["Puppy", "Beginner", "Intermediate", "Advanced"];
@@ -23,16 +24,18 @@ public class BasicLessonList extends AppCompatActivity {
         puppy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BasicLessonList.this, PuppyLessonList.class);
+                Intent intent = new Intent(BasicLessonList.this, DetailLessonList.class);
+                intent.putExtra("level", "0");
                 startActivity(intent);
             }//OnClick for puppy
-        });//SetOnClickListener for beginner
+        });//SetOnClickListener for puppy
 
         Button beginner = findViewById(R.id.beginner_lesson_button);
         beginner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BasicLessonList.this, BeginnerLessonList.class);
+                Intent intent = new Intent(BasicLessonList.this, DetailLessonList.class);
+                intent.putExtra("level", "1");
                 startActivity(intent);
             }//OnClick for beginner
         });//SetOnClickListener for beginner
@@ -41,7 +44,8 @@ public class BasicLessonList extends AppCompatActivity {
         intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BasicLessonList.this, IntermediateLessonList.class);
+                Intent intent = new Intent(BasicLessonList.this, DetailLessonList.class);
+                intent.putExtra("level", "2");
                 startActivity(intent);
             }//OnClick for intermediate lessons
         });//SetOnClickListener for intermediate lessons
@@ -49,7 +53,8 @@ public class BasicLessonList extends AppCompatActivity {
         advanced.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BasicLessonList.this, AdvancedLessonList.class);
+                Intent intent = new Intent(BasicLessonList.this, DetailLessonList.class);
+                intent.putExtra("level", "3");
                 startActivity(intent);
             }//OnClick for Advanced lessons
         });//SetOnClickListener for advanced lessons

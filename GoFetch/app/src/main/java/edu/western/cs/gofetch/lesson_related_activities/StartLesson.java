@@ -1,6 +1,5 @@
-package edu.western.cs.gofetch;
+package edu.western.cs.gofetch.lesson_related_activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import edu.western.cs.gofetch.dog_related_activities.DogProfile;
+import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.model.Dog;
 import io.realm.Realm;
 
@@ -73,6 +75,7 @@ public class StartLesson extends AppCompatActivity {
                 points += 100;
                 break;
             default:
+                break;
 
         }
 
@@ -150,7 +153,7 @@ public class StartLesson extends AppCompatActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.help_menu2, menu);
+        getMenuInflater().inflate(R.menu.help_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }//OnCreateOptionsMenu
 
@@ -161,6 +164,9 @@ public class StartLesson extends AppCompatActivity {
                 Intent intent = new Intent(StartLesson.this, Help.class);
                 startActivity(intent);
                 return true;
+            case R.id.home_icon:
+                Intent intent1 = new Intent(StartLesson.this, DogProfile.class);
+                startActivity(intent1);
             default:
                 return super.onOptionsItemSelected(item);
         }

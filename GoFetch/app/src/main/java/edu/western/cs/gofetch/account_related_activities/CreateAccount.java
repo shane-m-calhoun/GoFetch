@@ -1,14 +1,13 @@
-package edu.western.cs.gofetch;
+package edu.western.cs.gofetch.account_related_activities;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toolbar;
+
+import edu.western.cs.gofetch.R;
+import edu.western.cs.gofetch.dog_related_activities.DogList;
 
 public class CreateAccount extends AppCompatActivity {
 

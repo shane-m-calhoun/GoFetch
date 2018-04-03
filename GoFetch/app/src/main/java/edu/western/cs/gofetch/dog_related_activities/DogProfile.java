@@ -1,19 +1,16 @@
-package edu.western.cs.gofetch;
+package edu.western.cs.gofetch.dog_related_activities;
 
-import android.app.SharedElementCallback;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
+import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
+import edu.western.cs.gofetch.R;
+import edu.western.cs.gofetch.lesson_related_activities.BasicLessonList;
 import edu.western.cs.gofetch.model.Dog;
 import io.realm.Realm;
 

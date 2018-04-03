@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import edu.western.cs.gofetch.DogProfile;
+import edu.western.cs.gofetch.dog_related_activities.DogProfile;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.model.Dog;
 
