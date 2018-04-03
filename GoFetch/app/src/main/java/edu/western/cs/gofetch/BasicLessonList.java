@@ -23,6 +23,7 @@ public class BasicLessonList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BasicLessonList.this, PuppyLessonList.class);
+                intent.putExtra("level", "0");
                 startActivity(intent);
             }//OnClick for puppy
         });//SetOnClickListener for beginner
@@ -31,8 +32,9 @@ public class BasicLessonList extends AppCompatActivity {
         beginner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent beginnerIntent = new Intent(BasicLessonList.this, BeginnerLessonList.class);
-                startActivity(beginnerIntent);
+                Intent intent = new Intent(BasicLessonList.this, BeginnerLessonList.class);
+                intent.putExtra("level", "1");
+                startActivity(intent);
             }//OnClick for beginner
         });//SetOnClickListener for beginner
 
@@ -40,16 +42,18 @@ public class BasicLessonList extends AppCompatActivity {
         intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent interIntent = new Intent(BasicLessonList.this, IntermediateLessonList.class);
-                startActivity(interIntent);
+                Intent intent = new Intent(BasicLessonList.this, IntermediateLessonList.class);
+                intent.putExtra("level", "3");
+                startActivity(intent);
             }//OnClick for intermediate lessons
         });//SetOnClickListener for intermediate lessons
         Button advanced = findViewById(R.id.advanced_lesson_button);
         advanced.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent advancedIntent = new Intent(BasicLessonList.this, AdvancedLessonList.class);
-                startActivity(advancedIntent);
+                Intent intent = new Intent(BasicLessonList.this, AdvancedLessonList.class);
+                intent.putExtra("level", "4");
+                startActivity(intent);
             }//OnClick for Advanced lessons
         });//SetOnClickListener for advanced lessons
     }//OnCreate

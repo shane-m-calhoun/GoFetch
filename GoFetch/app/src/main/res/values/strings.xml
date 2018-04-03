@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GoFetch</string>
+    <string name="Start">Start</string>
+
 </resources>

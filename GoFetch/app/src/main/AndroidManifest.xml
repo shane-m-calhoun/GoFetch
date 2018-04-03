@@ -3,8 +3,8 @@
     package="edu.western.cs.gofetch">
 
     <application
-        android:allowBackup="true"
         android:name=".App"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -63,9 +63,13 @@
             android:label="GoFetch: Lesson Help"
             android:parentActivityName=".BasicLessonList" />
         <activity
-            android:parentActivityName=".Leaderboard"
+            android:name=".LeaderBoardHelp"
             android:label="Leader Board Help"
-            android:name=".LeaderBoardHelp"></activity>
+            android:parentActivityName=".Leaderboard" />
+        <activity android:name=".DetailLessonList"
+            android:label="Choose a Lesson"
+            android:parentActivityName=".BasicLessonList"/>
+        <activity android:name=".StartLesson"></activity>
     </application>
 
 </manifest>
