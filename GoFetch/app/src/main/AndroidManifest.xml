@@ -67,7 +67,7 @@
             android:label="Leader Board Help"
             android:parentActivityName=".Leaderboard" />
         <activity android:name=".DetailLessonList"
-            android:label="Choose a Lesson"
+            android:label=" Lessons"
             android:parentActivityName=".BasicLessonList"/>
         <activity android:name=".StartLesson"></activity>
     </application>

@@ -18,12 +18,12 @@ public class BasicLessonList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_lesson_list);
 
+
         Button puppy = findViewById(R.id.puppy_lesson_button);
         puppy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BasicLessonList.this, PuppyLessonList.class);
-                intent.putExtra("level", "0");
                 startActivity(intent);
             }//OnClick for puppy
         });//SetOnClickListener for beginner
@@ -33,7 +33,6 @@ public class BasicLessonList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BasicLessonList.this, BeginnerLessonList.class);
-                intent.putExtra("level", "1");
                 startActivity(intent);
             }//OnClick for beginner
         });//SetOnClickListener for beginner
@@ -43,7 +42,6 @@ public class BasicLessonList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BasicLessonList.this, IntermediateLessonList.class);
-                intent.putExtra("level", "3");
                 startActivity(intent);
             }//OnClick for intermediate lessons
         });//SetOnClickListener for intermediate lessons
@@ -52,7 +50,6 @@ public class BasicLessonList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BasicLessonList.this, AdvancedLessonList.class);
-                intent.putExtra("level", "4");
                 startActivity(intent);
             }//OnClick for Advanced lessons
         });//SetOnClickListener for advanced lessons

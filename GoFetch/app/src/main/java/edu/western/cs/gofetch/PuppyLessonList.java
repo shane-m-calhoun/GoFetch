@@ -23,11 +23,6 @@ public class PuppyLessonList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puppy_lesson_list);
 
-//        Intent intent = getIntent();
-//        String level = intent.getStringExtra("level");
-
-//        LessonData lessonData = new LessonData();
-//        final ArrayList<Lesson> mLessonList = lessonData.buildData();
 
         final ArrayList<Lesson> mLessonList = puppyLessons();
 
@@ -40,10 +35,11 @@ public class PuppyLessonList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(PuppyLessonList.this, StartLesson.class);
+
                 intent.putExtra("title", mLessonList.get(i).getTitle());
                 intent.putExtra("description", mLessonList.get(i).getDescription());
                 intent.putExtra("steps", mLessonList.get(i).getSteps());
-                intent.putExtra("points", 25);
+                intent.putExtra("level", "0");
 
                 startActivity(intent);
             }

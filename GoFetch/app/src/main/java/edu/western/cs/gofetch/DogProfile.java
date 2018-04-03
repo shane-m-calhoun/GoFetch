@@ -1,6 +1,8 @@
 package edu.western.cs.gofetch;
 
+import android.app.SharedElementCallback;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,15 +20,20 @@ import io.realm.Realm;
 public class DogProfile extends AppCompatActivity {
     public static final String EXTRA_ID = "id";
     Realm realm;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dog_profile);
 
-        Intent intent = getIntent();
-        //Contact contact = (Contact) intent.getSerializableExtra(EXTRA_CONTACT);
-        String id = intent.getStringExtra(EXTRA_ID);
+//        Intent intent = getIntent();
+//        //Contact contact = (Contact) intent.getSerializableExtra(EXTRA_CONTACT);
+//        final String id = intent.getStringExtra(EXTRA_ID);
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+        id = sharedPreferences.getString("dogID", "");
 
 
         //retrieve contact from Realm

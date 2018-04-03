@@ -22,13 +22,9 @@ public class BeginnerLessonList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beginner_lesson_list);
 
-//        Intent intent = getIntent();
-//        String level = intent.getStringExtra("level");
+        final ArrayList<Lesson> mLessonList = beginnerLessons();
 
-        LessonData lessonData = new LessonData();
-        final ArrayList<Lesson> mLessonList = lessonData.buildData();
-
-        ListView listView = findViewById(R.id.puppy_list);
+        ListView listView = findViewById(R.id.beginner_list);
 
         CustomAdapterL listAdapter = new CustomAdapterL(BeginnerLessonList.this, R.layout.lesson_list, mLessonList);
         listView.setAdapter(listAdapter);
@@ -37,11 +33,23 @@ public class BeginnerLessonList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(BeginnerLessonList.this, StartLesson.class);
+
                 intent.putExtra("title", mLessonList.get(i).getTitle());
+                intent.putExtra("description", mLessonList.get(i).getDescription());
+                intent.putExtra("steps", mLessonList.get(i).getSteps());
+                intent.putExtra("level", "1");
+
                 startActivity(intent);
             }
         });
     }//OnCreate
+
+    public ArrayList<Lesson> beginnerLessons(){
+        ArrayList<Lesson> list = new ArrayList<>();
+
+        return list;
+    }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.help_menu2, menu);
         return super.onCreateOptionsMenu(menu);

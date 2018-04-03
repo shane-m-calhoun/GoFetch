@@ -1,6 +1,7 @@
 package edu.western.cs.gofetch;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,28 +30,13 @@ public class DogList extends AppCompatActivity {
     ArrayList<Dog> mDogList;
     CustomRealmAdapter mCustomRealmAdapter;
 
+    private String SHARED_PREF = "share_dog";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dog_list);
 
-
-
-//        Dog kenai = new Dog();
-//        kenai.setFirst_name("Kenai");
-//        kenai.setAge("1");
-//        kenai.setBreed("Mini Aussie");
-//        kenai.setPoints(100);
-//        kenai.setWeight("25");
-//        dogs.add(kenai);
-//
-//        Dog beacon = new Dog();
-//        beacon.setFirst_name("Beacon");
-//        beacon.setAge("2");
-//        beacon.setBreed("Pointer");
-//        beacon.setPoints(100);
-//        beacon.setWeight("75");
-//        dogs.add(beacon);
 
         realm = Realm.getDefaultInstance();
 
@@ -64,6 +50,11 @@ public class DogList extends AppCompatActivity {
         mCustomRealmAdapter = new CustomRealmAdapter(mResults);
         dogList.setAdapter(mCustomRealmAdapter);
 
+        final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
+
 
 
         dogList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -71,7 +62,8 @@ public class DogList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(DogList.this, DogProfile.class);
                 Dog dog = mDogList.get(i);
-                intent.putExtra("id", dog.getId());
+                editor.putString("dogID", dog.getId());
+                editor.commit();
                 Log.d("ddd","********"+dog.getFirst_name()+dog.getPoints());
                 startActivity(intent);
             }
