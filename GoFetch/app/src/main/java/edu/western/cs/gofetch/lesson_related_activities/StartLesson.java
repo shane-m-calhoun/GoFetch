@@ -15,6 +15,7 @@ import edu.western.cs.gofetch.dog_related_activities.DogProfile;
 import edu.western.cs.gofetch.Help;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.model.Dog;
+import edu.western.cs.gofetch.model.Lesson;
 import io.realm.Realm;
 
 public class StartLesson extends AppCompatActivity {
