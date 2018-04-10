@@ -110,6 +110,7 @@ public class DetailLessonList extends AppCompatActivity {
                 "3) Start practicing longer crating periods.\n \n" +
                 "4) Crate your puppy when you leave.\n \n" +
                 "5) Crate your puppy at night.\n \n");
+        crateTraining.setLevel("0");
 
         list.add(crateTraining);
 
@@ -131,6 +132,7 @@ public class DetailLessonList extends AppCompatActivity {
                 "3) Every time that your puppy goes potty outside, reward them with praise and a treat. \n \n" +
                 "4) Any time you catch your puppy going potty in the house, say, \"NO,\" but not too aggressively. " +
                 "Quickly pick your puppy up and take it outside to finish. When the puppy starts going potty outside, once again, praise the puppy. \n \n");
+        pottyTraining.setLevel("0");
 
         list.add(pottyTraining);
 
@@ -152,17 +154,20 @@ public class DetailLessonList extends AppCompatActivity {
                 "2) Towards the end of the first training session, start to praise and play (secondary reinforcer) with the dog after the dog's response and giving them a treat. \n \n" +
                 "3) After multiple training sessions, begin to slowly take way the treat and the praise will eventually become the primary/only reward. \n \n " +
                 "4) Don't move on to the next lesson until the dog is able to keep responding to the clicker noise for an entire session, while only rewarding the dog with praise. ");
+        clickerTraining.setLevel("1");
 
         list.add(clickerTraining);
 
-        Lesson test = new Lesson();
+        Lesson sitTraining = new Lesson();
 
-        test.setTitle("Sit Training");
-        test.setDescription("This is just a test");
-        test.setSteps("1) test \n" +
+        sitTraining.setTitle("Sit");
+        sitTraining.setDescription("This is just a test");
+        sitTraining.setSteps("1) test \n" +
                 "2) test");
+        sitTraining.setLevel("1");
 
-        list.add(test);
+
+        list.add(sitTraining);
 
         return list;
     }
@@ -170,13 +175,16 @@ public class DetailLessonList extends AppCompatActivity {
     public ArrayList<Lesson> intermediateLessons(){
         ArrayList<Lesson> list = new ArrayList<>();
 
-        Lesson test = new Lesson();
+        Lesson rollover = new Lesson();
 
-        test.setTitle("Rollover Training");
-        test.setDescription("This is just a test");
-        test.setSteps("1) test \n" +
+        rollover.setTitle("Rollover");
+        rollover.setDescription("This is just a test");
+        rollover.setSteps("1) test \n" +
                 "2) test");
-        list.add(test);
+        rollover.setLevel("2");
+
+
+        list.add(rollover);
 
         return list;
     }
@@ -184,13 +192,15 @@ public class DetailLessonList extends AppCompatActivity {
     public ArrayList<Lesson> advancedLessons(){
         ArrayList<Lesson> list = new ArrayList<>();
 
-        Lesson test = new Lesson();
+        Lesson offLeash = new Lesson();
 
-        test.setTitle("Off-Leash Training");
-        test.setDescription("This is just a test");
-        test.setSteps("1) test \n" +
+        offLeash.setTitle("Off-Leash");
+        offLeash.setDescription("This is just a test");
+        offLeash.setSteps("1) test \n" +
                 "2) test");
-        list.add(test);
+        offLeash.setLevel("3");
+
+        list.add(offLeash);
 
         return list;
     }
