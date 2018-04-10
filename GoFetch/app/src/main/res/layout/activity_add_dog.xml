@@ -7,31 +7,33 @@
     android:orientation="vertical"
     android:weightSum="6"
     tools:context="edu.western.cs.gofetch.dog_related_activities.DogList">
+    <include layout="@layout/toolbar"/>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_height="0dp">-->
+        <!--<TextView-->
+            <!--android:layout_width="150dp"-->
+            <!--android:textColor="@color/Black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:text="Image File:"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:layout_height="50dp" />-->
+        <!--<Spinner-->
+            <!--android:layout_width="150dp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:id="@+id/spinner"-->
+            <!--android:spinnerMode="dropdown"-->
+            <!--android:layout_height="50dp"></Spinner>-->
+    <!--</LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_height="0dp">
-        <TextView
-            android:layout_width="150dp"
-            android:textColor="@color/Black"
-            android:textStyle="bold"
-            android:text="Image File:"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:layout_marginTop="50dp"
-            android:layout_height="50dp" />
-        <Spinner
-            android:layout_width="150dp"
-            android:textAlignment="center"
-            android:layout_marginTop="50dp"
-            android:id="@+id/spinner"
-            android:spinnerMode="dropdown"
-            android:layout_height="50dp"></Spinner>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp">
         <TextView
             android:layout_width="150dp"
             android:textAlignment="center"
