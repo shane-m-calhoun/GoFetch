@@ -23,13 +23,16 @@ public class StartLesson extends AppCompatActivity {
     private TextView counterText;
     private TextView lessonInfoText;
     private Button counterButton;
+    private Button finishButton;
 
     private CountDownTimer countDownTimer;
-    private long timeLeft = 10000;
+    private long timeLeft = 900000;
+    private long originalTime = 900000;
     private boolean timerRunning;
     private boolean timerFinished;
 
     private int points;
+    private int addedPoints;
 
     Realm realm;
 
@@ -48,6 +51,7 @@ public class StartLesson extends AppCompatActivity {
         counterText = findViewById(R.id.countdown_text);
         lessonInfoText = findViewById(R.id.info);
         counterButton = findViewById(R.id.counter_button);
+        finishButton = findViewById(R.id.finish_button);
 
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
@@ -64,16 +68,16 @@ public class StartLesson extends AppCompatActivity {
 
         switch (level){
             case "0":
-                points += 25;
+                addedPoints = 25;
                 break;
             case "1":
-                points += 50;
+                addedPoints = 50;
                 break;
             case "2":
-                points += 75;
+                addedPoints = 75;
                 break;
             case "3":
-                points += 100;
+                addedPoints = 100;
                 break;
             default:
                 break;
@@ -90,12 +94,34 @@ public class StartLesson extends AppCompatActivity {
                     startStop();
                 } else {
                     realm.beginTransaction();
-                    dog.setPoints(points);
+                    dog.setPoints(points + addedPoints);
                     realm.commitTransaction();
 
                     Intent i = new Intent(StartLesson.this, DogProfile.class);
                     startActivity(i);
                 }
+            }
+        });
+
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(timeLeft <= originalTime/2 && timeLeft > 60000) {
+
+                    realm.beginTransaction();
+                    dog.setPoints(points + addedPoints/2);
+                    realm.commitTransaction();
+
+                } else if(timeLeft <= 60000){
+
+                    realm.beginTransaction();
+                    dog.setPoints(points + addedPoints);
+                    realm.commitTransaction();
+
+                }
+
+                Intent i = new Intent(StartLesson.this, DogProfile.class);
+                startActivity(i);
             }
         });
 
@@ -119,8 +145,6 @@ public class StartLesson extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                counterButton.setText("Complete");
-                counterButton.setBackgroundColor(getResources().getColor(R.color.Red));
                 timerFinished = true;
             }
         }.start();

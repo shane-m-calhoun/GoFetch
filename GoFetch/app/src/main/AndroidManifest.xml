@@ -72,6 +72,14 @@
             android:parentActivityName=".lesson_related_activities.BasicLessonList" />
         <activity android:name=".lesson_related_activities.StartLesson" />
         <activity android:name=".Main2Activity" />
+        <activity
+            android:name=".NavigationDogList"
+            android:label="@string/title_activity_navigation_dog_list"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NavDogList"
+            android:label="@string/title_activity_nav_dog_list"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.western.cs.gofetch.dog_related_activities.DogList">
+    <include layout="@layout/toolbar"/>
+
+    <!--ListView-->
+    <ListView
+        android:id="@+id/dog_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/first_dog_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <Button
+            android:id="@+id/first_dog_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_dog"
+            android:textSize="50dp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@color/DarkGrey"
+            android:padding="10dp"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

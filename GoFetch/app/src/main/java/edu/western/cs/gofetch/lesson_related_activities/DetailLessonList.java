@@ -1,6 +1,7 @@
 package edu.western.cs.gofetch.lesson_related_activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -53,6 +55,24 @@ public class DetailLessonList extends AppCompatActivity {
 
         CustomAdapterL listAdapter = new CustomAdapterL(DetailLessonList.this, R.layout.lesson_list, mLessonList);
         listView.setAdapter(listAdapter);
+//        TextView listItem = findViewById(R.id.lesson_title);
+//
+//        switch (level){
+//            case "0":
+//                listItem.setBackgroundColor(getResources().getColor(R.color.Green));
+//                break;
+//            case "1":
+//                listItem.setBackgroundColor(getResources().getColor(R.color.Yellow));
+//                break;
+//            case "2":
+//                listItem.setBackgroundColor(getResources().getColor(R.color.Orange));
+//            case "3":
+//                listItem.setBackgroundColor(getResources().getColor(R.color.Red));
+//                break;
+//            default:
+//                break;
+//
+//        }
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

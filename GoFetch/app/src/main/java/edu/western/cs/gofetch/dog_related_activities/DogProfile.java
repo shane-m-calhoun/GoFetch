@@ -2,8 +2,10 @@ package edu.western.cs.gofetch.dog_related_activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,7 +25,10 @@ public class DogProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dog_profile);
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
 //        Intent intent = getIntent();
 //        //Contact contact = (Contact) intent.getSerializableExtra(EXTRA_CONTACT);
 //        final String id = intent.getStringExtra(EXTRA_ID);
@@ -58,14 +63,14 @@ public class DogProfile extends AppCompatActivity {
                 startActivity(lessonIntent);
             }//OnClick
         });//setOnClickListener
-        Button leaderBoard = findViewById(R.id.profile_leader_board_button);
-        leaderBoard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent leaderIntent = new Intent(DogProfile.this, Leaderboard.class);
-                startActivity(leaderIntent);
-            }
-        });
+//        Button leaderBoard = findViewById(R.id.profile_leader_board_button);
+//        leaderBoard.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent leaderIntent = new Intent(DogProfile.this, Leaderboard.class);
+//                startActivity(leaderIntent);
+//            }
+//        });
 
     }//OnCreate
 
