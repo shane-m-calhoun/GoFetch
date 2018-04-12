@@ -20,12 +20,12 @@
         <activity
             android:name=".dog_related_activities.AddDog"
             android:label="Add/Edit Dog"
-            android:parentActivityName=".dog_related_activities.DogList" />
-        <activity
-            android:name=".dog_related_activities.DogList"
-            android:icon="@drawable/ic_action_name"
-            android:label="GoFetch: Dog List"
-            android:parentActivityName=".account_related_activities.MainActivity" />
+            android:parentActivityName=".dog_related_activities.NavDogList" />
+        <!-- <activity -->
+        <!-- android:name=".dog_related_activities.DogList" -->
+        <!-- android:icon="@drawable/ic_action_name" -->
+        <!-- android:label="GoFetch: Dog List" -->
+        <!-- android:parentActivityName=".account_related_activities.MainActivity" /> -->
         <activity
             android:name=".account_related_activities.CreateAccount"
             android:label="Create New Account"
@@ -33,7 +33,7 @@
         <activity
             android:name=".dog_related_activities.DogProfile"
             android:label="Dog Profile"
-            android:parentActivityName=".dog_related_activities.DogList" />
+            android:parentActivityName=".dog_related_activities.NavDogList" />
         <activity
             android:name=".lesson_related_activities.BasicLessonList"
             android:label="Go Fetch Lessons"
@@ -42,22 +42,22 @@
             android:name=".leaderboard_related_activites.Leaderboard"
             android:label="Go Fetch: LeaderBoard"
             android:parentActivityName=".dog_related_activities.DogProfile" />
-        <activity
-            android:name=".PuppyLessonList"
-            android:label="Puppy Lessons"
-            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
-        <activity
-            android:name=".BeginnerLessonList"
-            android:label="Beginner Lessons"
-            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
-        <activity
-            android:name=".IntermediateLessonList"
-            android:label="Intermediate Lessons"
-            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
-        <activity
-            android:name=".AdvancedLessonList"
-            android:label="Advanced Lessons"
-            android:parentActivityName=".lesson_related_activities.BasicLessonList" />
+        <!-- <activity -->
+        <!-- android:name=".PuppyLessonList" -->
+        <!-- android:label="Puppy Lessons" -->
+        <!-- android:parentActivityName=".lesson_related_activities.BasicLessonList" /> -->
+        <!-- <activity -->
+        <!-- android:name=".BeginnerLessonList" -->
+        <!-- android:label="Beginner Lessons" -->
+        <!-- android:parentActivityName=".lesson_related_activities.BasicLessonList" /> -->
+        <!-- <activity -->
+        <!-- android:name=".IntermediateLessonList" -->
+        <!-- android:label="Intermediate Lessons" -->
+        <!-- android:parentActivityName=".lesson_related_activities.BasicLessonList" /> -->
+        <!-- <activity -->
+        <!-- android:name=".AdvancedLessonList" -->
+        <!-- android:label="Advanced Lessons" -->
+        <!-- android:parentActivityName=".lesson_related_activities.BasicLessonList" /> -->
         <activity
             android:name=".Help"
             android:label="GoFetch: Lesson Help"
@@ -71,14 +71,30 @@
             android:label=" Lessons"
             android:parentActivityName=".lesson_related_activities.BasicLessonList" />
         <activity android:name=".lesson_related_activities.StartLesson" />
-        <activity android:name=".Main2Activity" />
+        <!-- <activity android:name=".Main2Activity" /> -->
+        <!-- <activity -->
+        <!-- android:name=".NavigationDogList" -->
+        <!-- android:label="@string/title_activity_navigation_dog_list" -->
+        <!-- android:theme="@style/AppTheme" /> -->
         <activity
-            android:name=".NavigationDogList"
-            android:label="@string/title_activity_navigation_dog_list"
+            android:name=".dog_related_activities.NavDogList"
+            android:label="Dog List"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".NavDogList"
-            android:label="@string/title_activity_nav_dog_list"
+            android:name=".dog_related_activities.NavDogProfile"
+            android:label="Dog Profile"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".lesson_related_activities.NavBasicLessonList"
+            android:label="Basic Lessons"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".lesson_related_activities.NavDetailLessonList"
+            android:label="Detailed Lessons"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".lesson_related_activities.NavStartLesson"
+            android:label="Start Lesson!"
             android:theme="@style/AppTheme"></activity>
     </application>
 

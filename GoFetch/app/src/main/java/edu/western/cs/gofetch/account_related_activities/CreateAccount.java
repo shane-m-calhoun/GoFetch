@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import edu.western.cs.gofetch.R;
-import edu.western.cs.gofetch.dog_related_activities.DogList;
+import edu.western.cs.gofetch.dog_related_activities.NavDogList;
 
 public class CreateAccount extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class CreateAccount extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CreateAccount.this, DogList.class);
+                Intent intent = new Intent(CreateAccount.this, NavDogList.class);
                 startActivity(intent);
             }//onClick method
         });//setOnClickListener
