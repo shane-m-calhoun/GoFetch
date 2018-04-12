@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import edu.western.cs.gofetch.dog_related_activities.DogProfile;
+import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
 import edu.western.cs.gofetch.Help;
 import edu.western.cs.gofetch.R;
 
@@ -74,7 +74,7 @@ public class BasicLessonList extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.home_icon:
-                Intent intent1 = new Intent(BasicLessonList.this, DogProfile.class);
+                Intent intent1 = new Intent(BasicLessonList.this, NavDogProfile.class);
                 startActivity(intent1);
             default:
                 return super.onOptionsItemSelected(item);

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="4"
-    tools:context="edu.western.cs.gofetch.dog_related_activities.DogList">
+    tools:context="edu.western.cs.gofetch.dog_related_activities.NavDogList">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_weight="1"

@@ -1,7 +1,6 @@
-package edu.western.cs.gofetch.dog_related_activities;
+package edu.western.cs.gofetch.lesson_related_activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,23 +14,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
 
-import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
-import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
 import edu.western.cs.gofetch.R;
-import edu.western.cs.gofetch.model.Dog;
-import io.realm.Realm;
+import edu.western.cs.gofetch.dog_related_activities.AddDog;
+import edu.western.cs.gofetch.dog_related_activities.NavDogList;
+import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
+import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 
-public class NavDogProfile extends AppCompatActivity
+public class NavBasicLessonList extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    public static final String EXTRA_ID = "id";
-    Realm realm;
-    private String id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_dog_profile);
+        setContentView(R.layout.activity_nav_basic_lesson_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -52,43 +48,44 @@ public class NavDogProfile extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
-        id = sharedPreferences.getString("dogID", "");
-
-
-        //retrieve contact from Realm
-        realm = Realm.getDefaultInstance();
-        final Dog dog = realm.where(Dog.class).equalTo("id", id).findFirst();
-
-        TextView name = findViewById(R.id.profile_name_data);
-        TextView points = findViewById(R.id.profile_points_data);
-        TextView breed = findViewById(R.id.profile_breed_data);
-        TextView age = findViewById(R.id.profile_age_data);
-        TextView weight = findViewById(R.id.profile_weight_data);
-
-
-        name.setText(dog.getFirst_name());
-        points.setText(dog.getPoints() + " pts.");
-        breed.setText(dog.getBreed());
-        age.setText(dog.getAge());
-        weight.setText(dog.getWeight());
-
-        Button newLesson = findViewById(R.id.peofile_new_lesson_button);
-        newLesson.setOnClickListener(new View.OnClickListener() {
+        Button puppy = findViewById(R.id.puppy_lesson_button);
+        puppy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent lessonIntent = new Intent(NavDogProfile.this, NavBasicLessonList.class);
-                startActivity(lessonIntent);
-            }//OnClick
-        });//setOnClickListener
-//        Button leaderBoard = findViewById(R.id.profile_leader_board_button);
-//        leaderBoard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent leaderIntent = new Intent(DogProfile.this, Leaderboard.class);
-//                startActivity(leaderIntent);
-//            }
-//        });
+                Intent intent = new Intent(NavBasicLessonList.this, DetailLessonList.class);
+                intent.putExtra("level", "0");
+                startActivity(intent);
+            }//OnClick for puppy
+        });//SetOnClickListener for puppy
+
+        Button beginner = findViewById(R.id.beginner_lesson_button);
+        beginner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavBasicLessonList.this, DetailLessonList.class);
+                intent.putExtra("level", "1");
+                startActivity(intent);
+            }//OnClick for beginner
+        });//SetOnClickListener for beginner
+
+        Button intermediate = findViewById(R.id.intermediate_lesson_button);
+        intermediate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavBasicLessonList.this, DetailLessonList.class);
+                intent.putExtra("level", "2");
+                startActivity(intent);
+            }//OnClick for intermediate lessons
+        });//SetOnClickListener for intermediate lessons
+        Button advanced = findViewById(R.id.advanced_lesson_button);
+        advanced.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavBasicLessonList.this, DetailLessonList.class);
+                intent.putExtra("level", "3");
+                startActivity(intent);
+            }//OnClick for Advanced lessons
+        });//SetOnClickListener for advanced lessons
     }//OnCreate method
 
     @Override
@@ -104,7 +101,7 @@ public class NavDogProfile extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nav_dog_profile, menu);
+        getMenuInflater().inflate(R.menu.nav_basic_lesson_list, menu);
         return true;
     }
 
@@ -130,27 +127,26 @@ public class NavDogProfile extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent intent = new Intent(NavDogProfile.this, NavDogList.class);
+            Intent intent = new Intent(NavBasicLessonList.this, NavDogProfile.class);
             startActivity(intent);
-            //Go to Do List
+            //Dog Profile
         } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(NavDogProfile.this, AddDog.class);
+            Intent intent = new Intent(NavBasicLessonList.this, NavDogList.class);
             startActivity(intent);
-            //Add a dog
+            //Dog List
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(NavDogProfile.this, NavBasicLessonList.class);
+            Intent intent = new Intent(NavBasicLessonList.this, AddDog.class);
             startActivity(intent);
-            //Basic Lessons
+            //Add Dog
         } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavDogProfile.this, Leaderboard.class);
+            Intent intent = new Intent(NavBasicLessonList.this, Leaderboard.class);
             startActivity(intent);
             //Leaderboard
-//
-//        } else if (id == R.id.nav_share) {
+        } //else if (id == R.id.nav_share) {
 //
 //        } else if (id == R.id.nav_send) {
 //
-        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

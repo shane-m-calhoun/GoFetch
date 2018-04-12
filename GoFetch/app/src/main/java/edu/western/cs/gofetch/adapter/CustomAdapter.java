@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import edu.western.cs.gofetch.dog_related_activities.DogProfile;
+import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.model.Dog;
 
@@ -51,7 +51,7 @@ public class CustomAdapter extends ArrayAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, DogProfile.class);
+                Intent intent = new Intent(mContext, NavDogProfile.class);
                 /*intent.putExtra(DogProfile.EXTRA_POINTS, dog.getPoints());
                 intent.putExtra(DogProfile.EXTRA_BREED, dog.getBreed());
                 intent.putExtra(DogProfile.EXTRA_AGE, dog.getAge());

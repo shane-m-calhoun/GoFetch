@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import edu.western.cs.gofetch.dog_related_activities.DogProfile;
+import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
 import edu.western.cs.gofetch.Help;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.model.Dog;
@@ -97,7 +97,7 @@ public class StartLesson extends AppCompatActivity {
                     dog.setPoints(points + addedPoints);
                     realm.commitTransaction();
 
-                    Intent i = new Intent(StartLesson.this, DogProfile.class);
+                    Intent i = new Intent(StartLesson.this, NavDogProfile.class);
                     startActivity(i);
                 }
             }
@@ -120,7 +120,7 @@ public class StartLesson extends AppCompatActivity {
 
                 }
 
-                Intent i = new Intent(StartLesson.this, DogProfile.class);
+                Intent i = new Intent(StartLesson.this, NavDogProfile.class);
                 startActivity(i);
             }
         });
@@ -190,7 +190,7 @@ public class StartLesson extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.home_icon:
-                Intent intent1 = new Intent(StartLesson.this, DogProfile.class);
+                Intent intent1 = new Intent(StartLesson.this, NavDogProfile.class);
                 startActivity(intent1);
             default:
                 return super.onOptionsItemSelected(item);

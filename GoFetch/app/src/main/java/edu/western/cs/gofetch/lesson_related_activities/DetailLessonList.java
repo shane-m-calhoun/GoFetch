@@ -21,7 +21,7 @@ import edu.western.cs.gofetch.createLessons.Beginner;
 import edu.western.cs.gofetch.createLessons.Intermediate;
 import edu.western.cs.gofetch.createLessons.Puppy;
 import edu.western.cs.gofetch.data.LessonData;
-import edu.western.cs.gofetch.dog_related_activities.DogProfile;
+import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
 import edu.western.cs.gofetch.model.Lesson;
 
 public class DetailLessonList extends AppCompatActivity {
@@ -108,7 +108,7 @@ public class DetailLessonList extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.home_icon:
-                Intent intent1 = new Intent(DetailLessonList.this, DogProfile.class);
+                Intent intent1 = new Intent(DetailLessonList.this, NavDogProfile.class);
                 startActivity(intent1);
             default:
                 return super.onOptionsItemSelected(item);
