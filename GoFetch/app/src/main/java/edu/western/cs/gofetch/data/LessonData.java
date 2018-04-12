@@ -24,6 +24,7 @@ public class LessonData {
             "                            \"title\":\"Test\",\n" +
             "                            \"description\":\"test\",\n" +
             "                            \"steps\":\"Steps test\",\n" +
+            "                            \"level\":\"0\",\n" +
             "                            }\n" +
             "\n" +
             "    ]";
@@ -41,9 +42,11 @@ public class LessonData {
 
 
                 Lesson lesson = new Lesson();
+
                 lesson.setTitle(jsonObject.getString("title"));
                 lesson.setDescription(jsonObject.getString("description"));
                 lesson.setSteps(jsonObject.getString("steps"));
+                lesson.setLevel(jsonObject.getString("level"));
 
                 mLessonList.add(lesson);
             }
