@@ -23,6 +23,7 @@ import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
+import edu.western.cs.gofetch.account_related_activities.MainActivity;
 import edu.western.cs.gofetch.adapter.CustomRealmAdapter;
 import edu.western.cs.gofetch.dog_related_activities.AddDog;
 import edu.western.cs.gofetch.dog_related_activities.DogList;
@@ -70,9 +71,9 @@ public class NavDogList extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         //Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_reorder_black_24dp);
+       //ActionBar actionBar = getSupportActionBar();
+//        actionBar.setDisplayShowHomeEnabled(true);
+        //actionBar.setHomeAsUpIndicator(R.drawable.ic_reorder_black_24dp);
 
         RelativeLayout buttonLayout = findViewById(R.id.first_dog_layout);
         ListView dogList = findViewById(R.id.dog_list);
@@ -170,9 +171,12 @@ public class NavDogList extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+            Intent intent = new Intent(NavDogList.this, AddDog.class);
+            startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            Intent intent = new Intent(NavDogList.this, MainActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
