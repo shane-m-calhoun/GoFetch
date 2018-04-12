@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import edu.western.cs.gofetch.Help;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.dog_related_activities.AddDog;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
@@ -142,6 +143,10 @@ public class NavBasicLessonList extends AppCompatActivity
             Intent intent = new Intent(NavBasicLessonList.this, Leaderboard.class);
             startActivity(intent);
             //Leaderboard
+        }else if (id == R.id.nav_help2) {
+            Intent intent = new Intent(NavBasicLessonList.this, Help.class);
+            startActivity(intent);
+            //Help
         } //else if (id == R.id.nav_share) {
 //
 //        } else if (id == R.id.nav_send) {

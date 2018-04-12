@@ -12,6 +12,15 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Log Out" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_accessibility_black_24dp"
+            android:title="Leaderboard" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help_outline_black_24dp"
+            android:title="Help"
+            />
         <!--<item-->
             <!--android:id="@+id/nav_slideshow"-->
             <!--android:icon="@drawable/ic_menu_slideshow"-->
