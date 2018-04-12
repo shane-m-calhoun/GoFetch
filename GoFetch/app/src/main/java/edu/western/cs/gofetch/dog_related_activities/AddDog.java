@@ -27,7 +27,7 @@ public class AddDog extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         realm = Realm.getDefaultInstance();
 
         //Create Save Button to go back to dog list activity
