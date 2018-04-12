@@ -87,6 +87,10 @@
         <activity
             android:name=".lesson_related_activities.NavBasicLessonList"
             android:label="@string/title_activity_nav_basic_lesson_list"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".lesson_related_activities.NavDetailLessonList"
+            android:label="@string/title_activity_nav_detail_lesson_list"
             android:theme="@style/AppTheme"></activity>
     </application>
 

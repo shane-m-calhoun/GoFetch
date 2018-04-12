@@ -13,22 +13,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 import edu.western.cs.gofetch.Help;
 import edu.western.cs.gofetch.R;
-import edu.western.cs.gofetch.dog_related_activities.AddDog;
-import edu.western.cs.gofetch.dog_related_activities.NavDogList;
+import edu.western.cs.gofetch.adapter.CustomAdapterL;
+import edu.western.cs.gofetch.createLessons.Advanced;
+import edu.western.cs.gofetch.createLessons.Beginner;
+import edu.western.cs.gofetch.createLessons.Intermediate;
+import edu.western.cs.gofetch.createLessons.Puppy;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
 import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
+import edu.western.cs.gofetch.model.Lesson;
 
-public class NavBasicLessonList extends AppCompatActivity
+public class NavDetailLessonList extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private ArrayList<Lesson> mLessonList;
+    private String level;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_basic_lesson_list);
+        setContentView(R.layout.activity_nav_detail_lesson_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -49,44 +57,65 @@ public class NavBasicLessonList extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        Button puppy = findViewById(R.id.puppy_lesson_button);
-        puppy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(NavBasicLessonList.this, NavDetailLessonList.class);
-                intent.putExtra("level", "0");
-                startActivity(intent);
-            }//OnClick for puppy
-        });//SetOnClickListener for puppy
 
-        Button beginner = findViewById(R.id.beginner_lesson_button);
-        beginner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(NavBasicLessonList.this, NavDetailLessonList.class);
-                intent.putExtra("level", "1");
-                startActivity(intent);
-            }//OnClick for beginner
-        });//SetOnClickListener for beginner
+        Intent intent = getIntent();
+        level = intent.getStringExtra("level");
 
-        Button intermediate = findViewById(R.id.intermediate_lesson_button);
-        intermediate.setOnClickListener(new View.OnClickListener() {
+        switch (level){
+            case "0":
+                mLessonList = Puppy.puppyLessons();
+                break;
+            case "1":
+                mLessonList = Beginner.beginnerLessons();
+                break;
+            case "2":
+                mLessonList = Intermediate.intermediateLessons();
+                break;
+            case "3":
+                mLessonList = Advanced.advancedLessons();
+                break;
+            default:
+                break;
+
+        }
+
+
+        ListView listView = findViewById(R.id.detail_lesson_list);
+
+        CustomAdapterL listAdapter = new CustomAdapterL(NavDetailLessonList.this, R.layout.lesson_list, mLessonList);
+        listView.setAdapter(listAdapter);
+//        TextView listItem = findViewById(R.id.lesson_title);
+//
+//        switch (level){
+//            case "0":
+//                listItem.setBackgroundColor(getResources().getColor(R.color.Green));
+//                break;
+//            case "1":
+//                listItem.setBackgroundColor(getResources().getColor(R.color.Yellow));
+//                break;
+//            case "2":
+//                listItem.setBackgroundColor(getResources().getColor(R.color.Orange));
+//            case "3":
+//                listItem.setBackgroundColor(getResources().getColor(R.color.Red));
+//                break;
+//            default:
+//                break;
+//
+//        }
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(NavBasicLessonList.this, NavDetailLessonList.class);
-                intent.putExtra("level", "2");
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(NavDetailLessonList.this, StartLesson.class);
+
+                intent.putExtra("title", mLessonList.get(i).getTitle());
+                intent.putExtra("description", mLessonList.get(i).getDescription());
+                intent.putExtra("steps", mLessonList.get(i).getSteps());
+                intent.putExtra("level", level);
+
                 startActivity(intent);
-            }//OnClick for intermediate lessons
-        });//SetOnClickListener for intermediate lessons
-        Button advanced = findViewById(R.id.advanced_lesson_button);
-        advanced.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(NavBasicLessonList.this, NavDetailLessonList.class);
-                intent.putExtra("level", "3");
-                startActivity(intent);
-            }//OnClick for Advanced lessons
-        });//SetOnClickListener for advanced lessons
+            }
+        });
     }//OnCreate method
 
     @Override
@@ -102,7 +131,7 @@ public class NavBasicLessonList extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nav_basic_lesson_list, menu);
+        getMenuInflater().inflate(R.menu.nav_detail_lesson_list, menu);
         return true;
     }
 
@@ -127,31 +156,29 @@ public class NavBasicLessonList extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            Intent intent = new Intent(NavBasicLessonList.this, NavDogProfile.class);
+        if (id == R.id.nav_basic_less_list) {
+            Intent intent = new Intent(NavDetailLessonList.this, NavBasicLessonList.class);
+            startActivity(intent);
+            //Basic Lessons
+        } else if (id == R.id.nav_d_profile) {
+            Intent intent = new Intent(NavDetailLessonList.this, NavDogProfile.class);
             startActivity(intent);
             //Dog Profile
-        } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(NavBasicLessonList.this, NavDogList.class);
-            startActivity(intent);
-            //Dog List
-        } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(NavBasicLessonList.this, AddDog.class);
-            startActivity(intent);
-            //Add Dog
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavBasicLessonList.this, Leaderboard.class);
+        } else if (id == R.id.nav_detail_leaderboard) {
+            Intent intent = new Intent(NavDetailLessonList.this, Leaderboard.class);
             startActivity(intent);
             //Leaderboard
-        }else if (id == R.id.nav_help2) {
-            Intent intent = new Intent(NavBasicLessonList.this, Help.class);
+
+        } else if (id == R.id.nav_detail_help) {
+            Intent intent = new Intent(NavDetailLessonList.this, Help.class);
             startActivity(intent);
             //Help
+
         } //else if (id == R.id.nav_share) {
-//
+
 //        } else if (id == R.id.nav_send) {
 //
-
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
