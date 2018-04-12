@@ -1,11 +1,10 @@
-package edu.western.cs.gofetch;
+package edu.western.cs.gofetch.dog_related_activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,11 +22,9 @@ import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
+import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.account_related_activities.MainActivity;
 import edu.western.cs.gofetch.adapter.CustomRealmAdapter;
-import edu.western.cs.gofetch.dog_related_activities.AddDog;
-import edu.western.cs.gofetch.dog_related_activities.DogList;
-import edu.western.cs.gofetch.dog_related_activities.DogProfile;
 import edu.western.cs.gofetch.model.Dog;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -104,7 +101,7 @@ public class NavDogList extends AppCompatActivity
         dogList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(NavDogList.this, DogProfile.class);
+                Intent intent = new Intent(NavDogList.this, NavDogProfile.class);
                 Dog dog = mDogList.get(i);
                 editor.putString("dogID", dog.getId());
                 editor.commit();
@@ -177,15 +174,15 @@ public class NavDogList extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             Intent intent = new Intent(NavDogList.this, MainActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
+//        } else if (id == R.id.nav_slideshow) {
+//
+//        } else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
+//
+        }//else if for nav_gallery
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
