@@ -44,7 +44,7 @@ public class DogList extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         RelativeLayout buttonLayout = findViewById(R.id.first_dog_layout);
         ListView dogList = findViewById(R.id.dog_list);
