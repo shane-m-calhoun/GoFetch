@@ -106,7 +106,7 @@ public class NavDetailLessonList extends AppCompatActivity
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(NavDetailLessonList.this, StartLesson.class);
+                Intent intent = new Intent(NavDetailLessonList.this, NavStartLesson.class);
 
                 intent.putExtra("title", mLessonList.get(i).getTitle());
                 intent.putExtra("description", mLessonList.get(i).getDescription());

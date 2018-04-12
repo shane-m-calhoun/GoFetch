@@ -16,5 +16,6 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="title_activity_nav_basic_lesson_list">NavBasicLessonList</string>
     <string name="title_activity_nav_detail_lesson_list">NavDetailLessonList</string>
+    <string name="title_activity_nav_start_lesson">NavStartLesson</string>
 
 </resources>
