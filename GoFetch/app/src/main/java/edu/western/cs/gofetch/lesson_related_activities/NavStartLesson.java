@@ -174,6 +174,7 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
 
             @Override
             public void onFinish() {
+                counterButton.setVisibility(View.INVISIBLE);
                 timerFinished = true;
             }
         }.start();
