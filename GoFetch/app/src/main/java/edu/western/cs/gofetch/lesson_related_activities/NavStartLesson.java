@@ -74,7 +74,7 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
         final String level = i.getStringExtra("level");
 
         SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
-        String id = sharedPreferences.getString("dogID", "");
+        final String id = sharedPreferences.getString("dogID", "");
 
         titleText = findViewById(R.id.start_lesson_title);
         counterText = findViewById(R.id.countdown_text);
@@ -83,7 +83,7 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
         finishButton = findViewById(R.id.finish_button);
 
         Intent intent = getIntent();
-        String title = intent.getStringExtra("title");
+        final String title = intent.getStringExtra("title");
         String description = intent.getStringExtra("description");
         String steps = intent.getStringExtra("steps");
 
@@ -121,13 +121,6 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
             public void onClick(View view) {
                 if(!timerFinished) {
                     startStop();
-                } else {
-                    realm.beginTransaction();
-                    dog.setPoints(points + addedPoints);
-                    realm.commitTransaction();
-
-                    Intent i = new Intent(NavStartLesson.this, NavDogProfile.class);
-                    startActivity(i);
                 }
             }
         });
@@ -150,6 +143,10 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
                 }
 
                 Intent i = new Intent(NavStartLesson.this, NavDogProfile.class);
+                i.putExtra("dogId", id);
+                i.putExtra("lessonTitle", title);
+                i.putExtra("lessonLevel", level);
+
                 startActivity(i);
             }
         });
