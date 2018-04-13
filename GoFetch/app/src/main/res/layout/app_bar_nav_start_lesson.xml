@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.western.cs.gofetch.dog_related_activities.NavDogList">
+    tools:context=".lesson_related_activities.NavStartLesson">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_nav_dog_list" />
+    <include layout="@layout/content_nav_start_lesson" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

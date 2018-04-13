@@ -7,9 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.view.View;
 
-import edu.western.cs.gofetch.NavDogList;
+import edu.western.cs.gofetch.dog_related_activities.NavDogList;
 import edu.western.cs.gofetch.R;
-import edu.western.cs.gofetch.dog_related_activities.DogList;
 
 public class MainActivity extends AppCompatActivity {
 

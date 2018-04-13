@@ -10,5 +10,12 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_nav_dog_list">NavDogList</string>
+    <string name="title_activity_nav_dog_profile">NavDogProfile</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_nav_basic_lesson_list">NavBasicLessonList</string>
+    <string name="title_activity_nav_detail_lesson_list">NavDetailLessonList</string>
+    <string name="title_activity_nav_start_lesson">NavStartLesson</string>
 
 </resources>

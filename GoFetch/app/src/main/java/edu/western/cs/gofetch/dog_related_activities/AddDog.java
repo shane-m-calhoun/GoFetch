@@ -49,7 +49,7 @@ public class AddDog extends AppCompatActivity {
                 dog.setPoints(0);
                 realm.commitTransaction();
 
-                Intent intent = new Intent(AddDog.this, DogList.class);
+                Intent intent = new Intent(AddDog.this, NavDogList.class);
                 startActivity(intent);
             }//OnClick
         });//SetOnClickListener
