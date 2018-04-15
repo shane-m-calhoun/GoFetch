@@ -18,5 +18,7 @@
     <string name="title_activity_nav_detail_lesson_list">NavDetailLessonList</string>
     <string name="title_activity_nav_start_lesson">NavStartLesson</string>
     <string name="title_activity_nav_save_to_history">NavSaveToHistory</string>
+    <string name="title_activity_nav_history">NavHistory</string>
+    <string name="title_activity_nav_history_page">NavHistoryPage</string>
 
 </resources>

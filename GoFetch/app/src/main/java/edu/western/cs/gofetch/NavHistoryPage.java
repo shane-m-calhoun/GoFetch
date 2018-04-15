@@ -1,6 +1,5 @@
 package edu.western.cs.gofetch;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,18 +13,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import edu.western.cs.gofetch.dog_related_activities.NavDogList;
-import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
-import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
-import edu.western.cs.gofetch.lesson_related_activities.NavDetailLessonList;
-
-public class NavSaveToHistory extends AppCompatActivity
+public class NavHistoryPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_save_to_history);
+        setContentView(R.layout.activity_nav_history_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -61,7 +55,7 @@ public class NavSaveToHistory extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nav_save_to_history, menu);
+        getMenuInflater().inflate(R.menu.nav_history_page, menu);
         return true;
     }
 
@@ -86,24 +80,19 @@ public class NavSaveToHistory extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_save_history_profile) {
-            Intent intent = new Intent(NavSaveToHistory.this, NavDogProfile.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_save_go_list) {
-            Intent intent = new Intent(NavSaveToHistory.this, NavDogList.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_b_lesson) {
-            Intent intent = new Intent(NavSaveToHistory.this, NavBasicLessonList.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_d_lesson) {
-            Intent intent = new Intent(NavSaveToHistory.this, NavDetailLessonList.class);
-            startActivity(intent);
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
 
-        } //else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_slideshow) {
 
-//        } else if (id == R.id.nav_send) {
-//
-//        }
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
