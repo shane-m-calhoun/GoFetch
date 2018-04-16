@@ -88,9 +88,20 @@ public class Advanced {
         Lesson offLeash = new Lesson();
 
         offLeash.setTitle("Off-Leash Training");
-        offLeash.setDescription("This is just a offLeash");
-        offLeash.setSteps("1) offLeash \n" +
-                "2) offLeash");
+        offLeash.setDescription("Training your dog to be able to walk off-leash has many benefits. " +
+                "In most places, it is required that your dog is on a leash, but having your dog know how to walk off-leash will make the dog listen to you everywhere. " +
+                "For example, if your dog knows how to walk off-leash, it will be much easier to control your dog at a dog park. " +
+                "Also, some hiking trails allow your dog to be off-leash and you don't want your dog to chase a bird off of a cliff! " +
+                "Follow these steps and before you know it, your dog will be well behaved when off-leash. \n \n " +
+                "You will need: 15-20 foot leash/lead, your dog's favorite fetch toy, and lots of treats. \n \n ");
+        offLeash.setSteps("1) First, get your dog some exercise so they will listen to your better. \n \n" +
+                "2) Take your dog to a large field that is familiar to your dog and put the dog on a 15-20 foot leash (use caution and don't get tripped by the leash). " +
+                "The leas is only used if your dog starts running towards a distraction, otherwise you do not need to hold the leash. \n \n" +
+                "3) Practice all of the past lessons that your dog can do flawlessly at home. \n \n " +
+                "4) Reward for every single good behavior since your dog is in a different environment than the one they are use to. \n \n" +
+                "5) Practice the surprise stay: Get your dogs attention with a toy. Once you have your dog's attention, throw the toy and tell them to stay at the same time. " +
+                "If your dog stays, press your clicker and reward the dog with a treat. If your dog chases the toy, grab the leash and calmly say \"No, stay.\" \n \n " +
+                "6) Practice this frequently and in new environments. After 4-6 months your dog should listen to you no matter what and they will be ready to walk off the leash.");
         list.add(offLeash);
 
         return list;
