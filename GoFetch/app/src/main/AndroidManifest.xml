@@ -95,6 +95,18 @@
         <activity
             android:name=".lesson_related_activities.NavStartLesson"
             android:label="Start Lesson!"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NavSaveToHistory"
+            android:label="@string/title_activity_nav_save_to_history"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NavHistory"
+            android:label="@string/title_activity_nav_history"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NavHistoryPage"
+            android:label="@string/title_activity_nav_history_page"
             android:theme="@style/AppTheme"></activity>
     </application>
 
