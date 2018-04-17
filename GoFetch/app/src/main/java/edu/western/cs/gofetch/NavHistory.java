@@ -17,6 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -64,6 +66,7 @@ public class NavHistory extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ListView historyList = findViewById(R.id.nav_history);
+        RelativeLayout noHistory = findViewById(R.id.no_history_layout);
 
         SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
         id = sharedPreferences.getString("dogID", "");
@@ -73,6 +76,11 @@ public class NavHistory extends AppCompatActivity
         mResults= realm.where(History.class).equalTo("dogId", id).findAll();
 
         mHistoryList = new ArrayList<>(mResults);
+
+        if(mHistoryList.isEmpty()){
+            historyList.setVisibility(ListView.GONE);
+            noHistory.setVisibility(RelativeLayout.VISIBLE);
+        }
 
         mCustomRealmAdapter = new CustomRealmAdapterHistory(mResults);
         historyList.setAdapter(mCustomRealmAdapter);
