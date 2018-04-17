@@ -29,7 +29,7 @@ public class Beginner {
 
         Lesson comeHere = new Lesson();
 
-        comeHere.setTitle("\"Come Here\"");
+        comeHere.setTitle("Come Here");
         comeHere.setDescription("25pts - Not only is it nice to have your dog come to you when you want some loving, it also can save your dog's life. " +
                 "For example, if your dog just ran out of the house and is headed straight towards the road, \"Come Here,\" could prevent your dog from getting hit by a car. \n \n" +
                 "With this lesson, it is best to start in your house, then your yard or a grass area, and progress to a busy area with lots of distractions. " +

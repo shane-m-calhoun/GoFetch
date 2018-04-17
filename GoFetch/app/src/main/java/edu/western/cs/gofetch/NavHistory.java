@@ -1,8 +1,11 @@
 package edu.western.cs.gofetch;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +15,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+import edu.western.cs.gofetch.adapter.CustomRealmAdapter;
+import edu.western.cs.gofetch.adapter.CustomRealmAdapterHistory;
+import edu.western.cs.gofetch.dog_related_activities.NavDogList;
+import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
+import edu.western.cs.gofetch.model.Dog;
+import edu.western.cs.gofetch.model.History;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class NavHistory extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private Realm realm;
+    RealmResults<History> mResults;
+    ArrayList<History> mHistoryList;
+    CustomRealmAdapterHistory mCustomRealmAdapter;
+    private String id;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +62,32 @@ public class NavHistory extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ListView historyList = findViewById(R.id.nav_history);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+        id = sharedPreferences.getString("dogID", "");
+
+        realm = Realm.getDefaultInstance();
+
+        mResults= realm.where(History.class).equalTo("dogId", id).findAll();
+
+        mHistoryList = new ArrayList<>(mResults);
+
+        mCustomRealmAdapter = new CustomRealmAdapterHistory(mResults);
+        historyList.setAdapter(mCustomRealmAdapter);
+
+        historyList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(NavHistory.this, NavHistoryPage.class);
+                History history = mHistoryList.get(i);
+                intent.putExtra("lessonId", history.getId());
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override

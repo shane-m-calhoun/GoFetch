@@ -55,7 +55,7 @@ public class Puppy {
 
         Lesson handling = new Lesson();
 
-        handling.setTitle("\"Bathing\"");
+        handling.setTitle("Bathing");
         handling.setDescription("25pts - Getting your puppy comfortable with taking a bath is important. Not only will this make it easier for your, it will make it less stressful for your puppy. " +
                 "When doing this lesson, if your puppy freaks out, slow it down! Give them more treats, be playful, and reassure the puppy that it is ok. Always keep a calm voice! Keep the water at room temperature. \n \n");
         handling.setSteps("1) Take a long walk first. This will make your puppy tired and they will have less energy to fight you. \n \n" +
@@ -68,7 +68,7 @@ public class Puppy {
 
         Lesson nailTrimming = new Lesson();
 
-        nailTrimming.setTitle("\"Nail Trimming\"");
+        nailTrimming.setTitle("Nail Trimming");
         nailTrimming.setDescription("25pts - Trimming your puppy's nails can be very difficult, especially when they start to grow. If properly trained, this task will not only be easier for you, it will be a lot less " +
                 "stressful for your puppy. Introducing this to your puppy at a young age will make it easier for you to control them and it will make them more accepting of the process. \n \n" +
                 "Make sure you have the proper tools: high-quality dog nail clippers and styptic powder. \n \n" +
@@ -87,7 +87,7 @@ public class Puppy {
 
         Lesson brushingTeeth = new Lesson();
 
-        brushingTeeth.setTitle("\"Brushing Teeth\"");
+        brushingTeeth.setTitle("Brushing Teeth");
         brushingTeeth.setDescription("25pts - Dog kisses are great, except when the dog's mouth is not cleaning. A clean mouth not only makes dog kisses better, it also gives them a healthy mouth and prevents expensive vet bills. " +
                 "Training your puppy to let you brush their teeth at a young will make it an easier process when they are older. \n \n" +
                 "Make sure to use the dog specific tooth paste and a soft brush. \n \n " +

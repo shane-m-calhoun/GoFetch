@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavSaveToHistory;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
@@ -142,7 +143,7 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
 
                 }
 
-                Intent i = new Intent(NavStartLesson.this, NavDogProfile.class);
+                Intent i = new Intent(NavStartLesson.this, NavSaveToHistory.class);
                 i.putExtra("dogId", id);
                 i.putExtra("lessonTitle", title);
                 i.putExtra("lessonLevel", level);

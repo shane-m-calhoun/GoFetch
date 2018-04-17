@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHistory;
 import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
 import edu.western.cs.gofetch.R;
@@ -81,7 +82,18 @@ public class NavDogProfile extends AppCompatActivity
                 Intent lessonIntent = new Intent(NavDogProfile.this, NavBasicLessonList.class);
                 startActivity(lessonIntent);
             }//OnClick
-        });//setOnClickListener
+        });
+
+        Button history = findViewById(R.id.profile_go_to_history_button);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavDogProfile.this, NavHistory.class);
+                startActivity(intent);
+            }//OnClick
+        });
+
+        //setOnClickListener
 //        Button leaderBoard = findViewById(R.id.profile_leader_board_button);
 //        leaderBoard.setOnClickListener(new View.OnClickListener() {
 //            @Override

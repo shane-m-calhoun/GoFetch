@@ -18,6 +18,8 @@ public class History extends RealmObject implements Serializable {
         private String lessonLevel;
         private String performanceLevel;
         private String sessionNotes;
+        private String date;
+        private String time;
 
         public String getId(){
             return id;
@@ -59,5 +61,19 @@ public class History extends RealmObject implements Serializable {
         }
         public void setSessionNotes(String sessionNotes){
             this.sessionNotes = sessionNotes;
+        }
+
+        public String getDate() {
+            return date;
+        }
+        public void setDate(String date){
+            this.date = date;
+        }
+
+        public String getTime(){
+            return time;
+        }
+        public void setTime(String time){
+            this.time = time;
         }
 }

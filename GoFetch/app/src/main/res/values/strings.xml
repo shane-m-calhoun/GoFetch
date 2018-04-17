@@ -21,4 +21,14 @@
     <string name="title_activity_nav_history">NavHistory</string>
     <string name="title_activity_nav_history_page">NavHistoryPage</string>
 
+    <string name="spinnerPrompt">Performance Level</string>
+
+    <string-array name="spinnerItems">
+        <item>Poor</item>
+        <item>Good</item>
+        <item>Perfect</item>
+    </string-array>
+
+    <string name="notes">Notes</string>
+
 </resources>
