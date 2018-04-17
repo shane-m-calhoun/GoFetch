@@ -1,5 +1,6 @@
 package edu.western.cs.gofetch;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,9 +13,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+
+import edu.western.cs.gofetch.model.History;
+import edu.western.cs.gofetch.model.Lesson;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class NavHistoryPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,37 @@ public class NavHistoryPage extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        TextView title = findViewById(R.id.textView_title);
+        TextView level = findViewById(R.id.textView_level);
+        TextView date = findViewById(R.id.textView_date);
+        TextView time = findViewById(R.id.textView_time);
+        TextView performance = findViewById(R.id.textView_performance);
+        TextView notes = findViewById(R.id.textView_notes);
+        Button back = findViewById(R.id.button_allHistory);
+
+        Intent intent = getIntent();
+        final String lessonId = intent.getStringExtra("lessonId");
+
+        realm = Realm.getDefaultInstance();
+
+        History history= realm.where(History.class).equalTo("id", lessonId).findFirst();
+
+        title.setText(history.getLessonTitle());
+        level.setText("Lvl: " + history.getLessonLevel());
+        date.setText(history.getDate());
+        time.setText(history.getTime());
+        performance.setText("Performance: " + history.getPerformanceLevel());
+        notes.setText(history.getSessionNotes());
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(NavHistoryPage.this, NavHistory.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     @Override
