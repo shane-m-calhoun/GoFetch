@@ -10,7 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".account_related_activities.MainActivity">
+        <!--<activity android:name=".account_related_activities.MainActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <activity
+            android:name=".dog_related_activities.NavDogList"
+            android:label="Dog List"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,10 +86,7 @@
         <!-- android:name=".NavigationDogList" -->
         <!-- android:label="@string/title_activity_navigation_dog_list" -->
         <!-- android:theme="@style/AppTheme" /> -->
-        <activity
-            android:name=".dog_related_activities.NavDogList"
-            android:label="Dog List"
-            android:theme="@style/AppTheme" />
+
         <activity
             android:name=".dog_related_activities.NavDogProfile"
             android:label="Dog Profile"
