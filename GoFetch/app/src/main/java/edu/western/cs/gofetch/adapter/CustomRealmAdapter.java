@@ -1,5 +1,6 @@
 package edu.western.cs.gofetch.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,12 +46,16 @@ public class CustomRealmAdapter extends RealmBaseAdapter {
 
         //identify textview and set text from Realmresults
         TextView dogName = view.findViewById(R.id.dog_name);
+        TextView level = view.findViewById(R.id.dogs_level);
+        TextView points = view.findViewById(R.id.dogs_points);
 
         Dog dog = mResults.get(position);
 
+        int lvl = dog.getPoints()/100 + 1;
+
         dogName.setText(dog.getFirst_name());
-
-
+        level.setText("Level: " + lvl);
+        points.setText(dog.getPoints() + "pts.");
 
 
         return view;

@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -67,6 +68,7 @@ public class NavHistory extends AppCompatActivity
 
         ListView historyList = findViewById(R.id.nav_history);
         RelativeLayout noHistory = findViewById(R.id.no_history_layout);
+        Button noHistBack = findViewById(R.id.no_history);
 
         SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
         id = sharedPreferences.getString("dogID", "");
@@ -91,6 +93,14 @@ public class NavHistory extends AppCompatActivity
                 Intent intent = new Intent(NavHistory.this, NavHistoryPage.class);
                 History history = mHistoryList.get(i);
                 intent.putExtra("lessonId", history.getId());
+                startActivity(intent);
+            }
+        });
+
+        noHistBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavHistory.this, NavDogProfile.class);
                 startActivity(intent);
             }
         });

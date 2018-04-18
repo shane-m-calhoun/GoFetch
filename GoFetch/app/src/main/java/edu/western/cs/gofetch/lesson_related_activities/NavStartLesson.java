@@ -144,7 +144,6 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
                 }
 
                 Intent i = new Intent(NavStartLesson.this, NavSaveToHistory.class);
-                i.putExtra("dogId", id);
                 i.putExtra("lessonTitle", title);
                 i.putExtra("lessonLevel", level);
 

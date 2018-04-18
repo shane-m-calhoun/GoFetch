@@ -58,6 +58,8 @@ public class NavHistoryPage extends AppCompatActivity
         TextView performance = findViewById(R.id.textView_performance);
         TextView notes = findViewById(R.id.textView_notes);
         Button back = findViewById(R.id.button_allHistory);
+        
+        String lessonLevel;
 
         Intent intent = getIntent();
         final String lessonId = intent.getStringExtra("lessonId");
@@ -66,8 +68,27 @@ public class NavHistoryPage extends AppCompatActivity
 
         History history= realm.where(History.class).equalTo("id", lessonId).findFirst();
 
+        switch (history.getLessonLevel()){
+            case "0":
+                lessonLevel = "Puppy Lesson";
+                break;
+            case "1":
+                lessonLevel = "Beginner Lesson";
+                break;
+            case "2":
+                lessonLevel = "Intermediate Lesson";
+                break;
+            case "3":
+                lessonLevel = "Advanced Lesson";
+                break;
+            default:
+                lessonLevel = "";
+                break;
+
+        }
+
         title.setText(history.getLessonTitle());
-        level.setText("Lvl: " + history.getLessonLevel());
+        level.setText(lessonLevel);
         date.setText(history.getDate());
         time.setText(history.getTime());
         performance.setText("Performance: " + history.getPerformanceLevel());

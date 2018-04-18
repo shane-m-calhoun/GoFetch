@@ -57,7 +57,7 @@
                         android:textAlignment="center"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
 
@@ -69,10 +69,41 @@
                         android:gravity="right"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
                 </LinearLayout>
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:text="Level:"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:id="@+id/profile_level"-->
+                        <!--android:textAlignment="center"-->
+                        <!--android:textColor="@color/Black"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_height="30dp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:id="@+id/profile_level_data"-->
+                        <!--android:paddingRight="5dp"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:gravity="right"-->
+                        <!--android:textColor="@color/Black"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_height="30dp" />-->
+                <!--</LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -88,7 +119,7 @@
                         android:textAlignment="center"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
 
@@ -100,7 +131,7 @@
                         android:gravity="right"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
                 </LinearLayout>
@@ -119,7 +150,7 @@
                         android:textAlignment="center"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
 
@@ -131,7 +162,7 @@
                         android:gravity="right"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
                 </LinearLayout>
@@ -150,7 +181,7 @@
                         android:textAlignment="center"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
 
@@ -162,7 +193,7 @@
                         android:gravity="right"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
                 </LinearLayout>
@@ -181,7 +212,7 @@
                         android:textAlignment="center"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
 
@@ -193,7 +224,7 @@
                         android:gravity="right"
                         android:textColor="@color/Black"
                         android:textStyle="bold"
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:layout_marginTop="5dp"
                         android:layout_height="30dp" />
                 </LinearLayout>
@@ -210,13 +241,13 @@
         <!--android:textAlignment="center"-->
         <!--android:textColor="@color/Black"-->
         <!--android:textStyle="bold"-->
-        <!--android:textSize="20sp"-->
+        <!--android:textSize="15sp"-->
         <!--android:id="@+id/profile_weekly_button"-->
         <!--android:layout_height="50dp" />-->
         <!--<Button-->
         <!--android:layout_width="120dp"-->
         <!--android:layout_marginLeft="10dp"-->
-        <!--android:textSize="20sp"-->
+        <!--android:textSize="15sp"-->
         <!--android:textStyle="bold"-->
         <!--android:textColor="@color/Black"-->
         <!--android:textAlignment="center"-->
@@ -232,7 +263,7 @@
         <!--android:textAlignment="center"-->
         <!--android:textColor="@color/Black"-->
         <!--android:textStyle="bold"-->
-        <!--android:textSize="20sp"-->
+        <!--android:textSize="15sp"-->
         <!--android:id="@+id/profile_yearly_button"-->
         <!--android:layout_height="50dp" />-->
         <!--</LinearLayout>-->

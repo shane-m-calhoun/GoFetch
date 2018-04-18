@@ -54,6 +54,7 @@ public class NavDogProfile extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
         id = sharedPreferences.getString("dogID", "");
 
@@ -63,13 +64,18 @@ public class NavDogProfile extends AppCompatActivity
         final Dog dog = realm.where(Dog.class).equalTo("id", id).findFirst();
 
         TextView name = findViewById(R.id.profile_name_data);
+//        TextView level = findViewById(R.id.profile_level_data);
         TextView points = findViewById(R.id.profile_points_data);
         TextView breed = findViewById(R.id.profile_breed_data);
         TextView age = findViewById(R.id.profile_age_data);
         TextView weight = findViewById(R.id.profile_weight_data);
 
 
+//        int lvl = dog.getPoints()/100 + 1;
+
+
         name.setText(dog.getFirst_name());
+//        level.setText(lvl);
         points.setText(dog.getPoints() + " pts.");
         breed.setText(dog.getBreed());
         age.setText(dog.getAge());

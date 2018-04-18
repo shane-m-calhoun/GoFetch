@@ -4,6 +4,7 @@
     <string name="Finish">Finish</string>
     <string name="add_dog">Add Dog</string>
     <string name="title_activity_navigation_dog_list">NavigationDogList</string>
+    <string name="noHist">No History! Press to go back.</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -30,5 +31,15 @@
     </string-array>
 
     <string name="notes">Notes</string>
+
+    <string name="whyTimer">15-Minutes is the suggested time to train your dog on a lesson.
+         Any time shorter than 15-minutes, the dog will not spend enough time on the lesson to truly benefit.
+         Any time longer than 15-minutes, the dog\'s brain will be over worked, which can reduce the amount the dog learns during the session. \n \n
+        It is suggested that your dog gets exercise before the training session. This way the dog will have less energy and will be more willing to listen. \n \n
+        For best retention, your dog will need to rest so they can process the lesson. It is suggested that your dog is put in their crate for an hour after the lesson,
+         this way they will not be distracted while they are processing what they learned. \n \n
+        REMEMBER: only do one lesson/session a day! Any more will actually slow down your dogs learning process. The lesson will still be fresh in the brain, but if you wait till the next day,
+         it wont be as fresh, which will actually improve how well they will retain the information after the next lesson.
+    </string>
 
 </resources>

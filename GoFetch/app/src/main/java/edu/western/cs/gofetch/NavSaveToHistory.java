@@ -1,6 +1,7 @@
 package edu.western.cs.gofetch;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -70,8 +71,10 @@ public class NavSaveToHistory extends AppCompatActivity
 
         Intent intent = getIntent();
         final String lessonTitle = intent.getStringExtra("lessonTitle");
-        final String dogId = intent.getStringExtra("dogId");
         final String lessonLevel = intent.getStringExtra("lessonLevel");
+
+        SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+        final String dogId = sharedPreferences.getString("dogID", "");
 
         realm = Realm.getDefaultInstance();
 //        final Dog dog = realm.where(Dog.class).equalTo("id", dogId).findFirst();

@@ -19,7 +19,7 @@
         <!--</activity>-->
         <activity
             android:name=".dog_related_activities.NavDogList"
-            android:label="Dog List"
+            android:label="GoFetch"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
