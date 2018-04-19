@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.NavHistory;
-import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
+//import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.model.Dog;
