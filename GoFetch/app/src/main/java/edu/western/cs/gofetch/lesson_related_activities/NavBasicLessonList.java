@@ -21,7 +21,7 @@ import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.dog_related_activities.AddDog;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
-import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
+//import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 
 public class NavBasicLessonList extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -151,11 +151,7 @@ public class NavBasicLessonList extends AppCompatActivity
             intent.putExtra("dogId", dogId);
             startActivity(intent);
             //Add Dog
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavBasicLessonList.this, Leaderboard.class);
-            startActivity(intent);
-            //Leaderboard
-        }else if (id == R.id.nav_help2) {
+        } else if (id == R.id.nav_help2) {
             Intent intent = new Intent(NavBasicLessonList.this, Help.class);
             startActivity(intent);
             //Help

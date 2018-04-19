@@ -28,7 +28,7 @@ import edu.western.cs.gofetch.createLessons.Beginner;
 import edu.western.cs.gofetch.createLessons.Intermediate;
 import edu.western.cs.gofetch.createLessons.Puppy;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
-import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
+//import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.model.Lesson;
 
 public class NavDetailLessonList extends AppCompatActivity
@@ -174,11 +174,6 @@ public class NavDetailLessonList extends AppCompatActivity
             Intent intent = new Intent(NavDetailLessonList.this, NavDogProfile.class);
             startActivity(intent);
             //Dog Profile
-        } else if (id == R.id.nav_detail_leaderboard) {
-            Intent intent = new Intent(NavDetailLessonList.this, Leaderboard.class);
-            startActivity(intent);
-            //Leaderboard
-
         } else if (id == R.id.nav_detail_help) {
             Intent intent = new Intent(NavDetailLessonList.this, Help.class);
             startActivity(intent);

@@ -24,9 +24,9 @@ import java.util.ArrayList;
 
 import edu.western.cs.gofetch.Help;
 import edu.western.cs.gofetch.R;
-import edu.western.cs.gofetch.account_related_activities.MainActivity;
+//import edu.western.cs.gofetch.account_related_activities.MainActivity;
 import edu.western.cs.gofetch.adapter.CustomRealmAdapter;
-import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
+//import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.model.Dog;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -174,13 +174,6 @@ public class NavDogList extends AppCompatActivity
             Intent intent = new Intent(NavDogList.this, AddDog.class);
             startActivity(intent);
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(NavDogList.this, MainActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavDogList.this, Leaderboard.class);
-            startActivity(intent);
-            //Leaderboard
         } else if (id == R.id.nav_help) {
             Intent intent = new Intent(NavDogList.this, Help.class);
             startActivity(intent);

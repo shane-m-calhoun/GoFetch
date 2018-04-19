@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import edu.western.cs.gofetch.Help;
 import edu.western.cs.gofetch.NavHistory;
-import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
+//import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.model.Dog;
@@ -160,15 +160,6 @@ public class NavDogProfile extends AppCompatActivity
             Intent intent = new Intent(NavDogProfile.this, NavBasicLessonList.class);
             startActivity(intent);
             //Basic Lessons
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavDogProfile.this, Leaderboard.class);
-            startActivity(intent);
-            //Leaderboard
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
         }else if (id == R.id.nav_help1) {
             Intent intent = new Intent(NavDogProfile.this, Help.class);
             startActivity(intent);

@@ -23,7 +23,7 @@ import edu.western.cs.gofetch.NavSaveToHistory;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
-import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
+//import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.model.Dog;
 import io.realm.Realm;
 
@@ -256,10 +256,7 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
         } else if (id == R.id.nav_start_dog_list) {
             Intent intent = new Intent(NavStartLesson.this, NavDogList.class);
             startActivity(intent);
-        } else if (id == R.id.nav_start_leaderboard) {
-            Intent intent = new Intent(NavStartLesson.this, Leaderboard.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_start_help) {
+        }  else if (id == R.id.nav_start_help) {
             Intent intent = new Intent(NavStartLesson.this, Help.class);
             startActivity(intent);
         } //else if (id == R.id.nav_send) {
