@@ -42,6 +42,8 @@ public class NavSaveToHistory extends AppCompatActivity
     private EditText editText;
     private Button button;
 
+    private String lessonLevel;
+
     private String pointsReceived;
 
     private Realm realm;
@@ -74,7 +76,7 @@ public class NavSaveToHistory extends AppCompatActivity
 
         Intent intent = getIntent();
         final String lessonTitle = intent.getStringExtra("lessonTitle");
-        final String lessonLevel = intent.getStringExtra("lessonLevel");
+        lessonLevel = intent.getStringExtra("lessonLevel");
         pointsReceived = intent.getStringExtra("pointsReceived");
 
         SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
@@ -133,7 +135,9 @@ public class NavSaveToHistory extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(NavSaveToHistory.this, NavDetailLessonList.class);
+            intent.putExtra("level", lessonLevel);
+            startActivity(intent);
         }
     }
 
