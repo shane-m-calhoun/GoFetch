@@ -42,8 +42,8 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
     private boolean timerRunning;
     private boolean timerFinished;
 
-    private int points;
-    private int addedPoints;
+    private double points;
+    private double addedPoints;
 
     Realm realm;
     @Override

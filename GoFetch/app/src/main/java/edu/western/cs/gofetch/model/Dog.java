@@ -18,7 +18,7 @@ public class Dog extends RealmObject implements Serializable{
     private String weight;
     private String email;
     private String age;
-    private int points;
+    private Double points;
 
     public String getId(){
         return id;
@@ -67,10 +67,10 @@ public class Dog extends RealmObject implements Serializable{
     }
 
 
-    public void setPoints(int points){
+    public void setPoints(double points){
         this.points = points;
     }
-    public int getPoints(){
+    public double getPoints(){
         return points;
     }
 

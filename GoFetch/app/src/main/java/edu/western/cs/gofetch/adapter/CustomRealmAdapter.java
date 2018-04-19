@@ -51,7 +51,7 @@ public class CustomRealmAdapter extends RealmBaseAdapter {
 
         Dog dog = mResults.get(position);
 
-        int lvl = dog.getPoints()/100 + 1;
+        int lvl = (int)Math.round(dog.getPoints())/100 + 1;
 
         dogName.setText(dog.getFirst_name());
         level.setText("Level: " + lvl);
