@@ -1,6 +1,7 @@
 package edu.western.cs.gofetch.lesson_related_activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -33,6 +35,7 @@ public class NavDetailLessonList extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ArrayList<Lesson> mLessonList;
     private String level;
+    private String title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,24 +87,7 @@ public class NavDetailLessonList extends AppCompatActivity
 
         CustomAdapterL listAdapter = new CustomAdapterL(NavDetailLessonList.this, R.layout.lesson_list, mLessonList);
         listView.setAdapter(listAdapter);
-//        TextView listItem = findViewById(R.id.lesson_title);
-//
-//        switch (level){
-//            case "0":
-//                listItem.setBackgroundColor(getResources().getColor(R.color.Green));
-//                break;
-//            case "1":
-//                listItem.setBackgroundColor(getResources().getColor(R.color.Yellow));
-//                break;
-//            case "2":
-//                listItem.setBackgroundColor(getResources().getColor(R.color.Orange));
-//            case "3":
-//                listItem.setBackgroundColor(getResources().getColor(R.color.Red));
-//                break;
-//            default:
-//                break;
-//
-//        }
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -132,6 +118,30 @@ public class NavDetailLessonList extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.nav_detail_lesson_list, menu);
+
+        Intent intent = getIntent();
+        level = intent.getStringExtra("level");
+
+        switch (level){
+            case "0":
+                title = "Puppy Lessons";
+                break;
+            case "1":
+                title = "Beginner Lessons";
+                break;
+            case "2":
+                title = "Intermediate Lessons";
+                break;
+            case "3":
+                title = "Advanced Lessons";
+                break;
+            default:
+                title = "Lessons";
+                break;
+
+        }
+        setTitle(title);
+
         return true;
     }
 
