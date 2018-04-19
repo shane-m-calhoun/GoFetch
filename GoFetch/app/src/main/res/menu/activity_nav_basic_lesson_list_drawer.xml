@@ -17,6 +17,10 @@
             android:icon="@drawable/ic_pets_black_24dp"
             android:title="Add Dog" />
         <item
+            android:id="@+id/nav_edit"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Edit Dog" />
+        <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_accessibility_black_24dp"
             android:title="Leaderboard" />

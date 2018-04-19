@@ -1,6 +1,7 @@
 package edu.western.cs.gofetch.lesson_related_activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -138,6 +139,16 @@ public class NavBasicLessonList extends AppCompatActivity
             //Dog List
         } else if (id == R.id.nav_slideshow) {
             Intent intent = new Intent(NavBasicLessonList.this, AddDog.class);
+            intent.putExtra("method", "add");
+            startActivity(intent);
+            //Add Dog
+        } else if (id == R.id.nav_edit) {
+            SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+            final String dogId = sharedPreferences.getString("dogID", "");
+
+            Intent intent = new Intent(NavBasicLessonList.this, AddDog.class);
+            intent.putExtra("method", "edit");
+            intent.putExtra("dogId", dogId);
             startActivity(intent);
             //Add Dog
         } else if (id == R.id.nav_manage) {
