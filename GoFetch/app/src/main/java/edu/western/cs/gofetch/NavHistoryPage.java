@@ -1,6 +1,7 @@
 package edu.western.cs.gofetch;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +17,10 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import edu.western.cs.gofetch.dog_related_activities.AddDog;
+import edu.western.cs.gofetch.dog_related_activities.NavDogList;
+import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
+import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
 import edu.western.cs.gofetch.model.History;
 import edu.western.cs.gofetch.model.Lesson;
 import io.realm.Realm;
@@ -141,20 +146,37 @@ public class NavHistoryPage extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        if (id == R.id.nav_history_page_profile) {
+            Intent intent = new Intent(NavHistoryPage.this, NavDogProfile.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_history_page_list) {
+            Intent intent = new Intent(NavHistoryPage.this, NavDogList.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_history_list_add) {
+            Intent intent = new Intent(NavHistoryPage.this, AddDog.class);
+            intent.putExtra("method", "add");
+            startActivity(intent);
+            //Add Dog
+        } else if (id == R.id.nav_history_list_edit_dog) {
+            SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+            final String dogId = sharedPreferences.getString("dogID", "");
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+            Intent intent = new Intent(NavHistoryPage.this, AddDog.class);
+            intent.putExtra("method", "edit");
+            intent.putExtra("dogId", dogId);
+            startActivity(intent);
+            //Edit Dog Dog
+        } else if (id == R.id.nav_history_page_new_lesson) {
+            Intent intent = new Intent(NavHistoryPage.this, NavBasicLessonList.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_history_page_help) {
+            Intent intent = new Intent(NavHistoryPage.this, NavHelp.class);
+            startActivity(intent);
 
         }
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
