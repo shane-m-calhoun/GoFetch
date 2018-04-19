@@ -22,6 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import edu.western.cs.gofetch.NavHelp;
+import edu.western.cs.gofetch.NavSaveToHistory;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.adapter.CustomAdapterL;
 import edu.western.cs.gofetch.createLessons.Advanced;
@@ -112,7 +113,8 @@ public class NavDetailLessonList extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(NavDetailLessonList.this, NavBasicLessonList.class);
+            startActivity(intent);
         }
     }
 

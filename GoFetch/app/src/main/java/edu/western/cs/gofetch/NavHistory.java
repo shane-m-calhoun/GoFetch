@@ -27,6 +27,7 @@ import edu.western.cs.gofetch.adapter.CustomRealmAdapter;
 import edu.western.cs.gofetch.adapter.CustomRealmAdapterHistory;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
+import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
 import edu.western.cs.gofetch.model.Dog;
 import edu.western.cs.gofetch.model.History;
 import io.realm.Realm;
@@ -114,7 +115,8 @@ public class NavHistory extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(NavHistory.this, NavDogProfile.class);
+            startActivity(intent);
         }
     }
 

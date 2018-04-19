@@ -116,7 +116,8 @@ public class NavDogProfile extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(NavDogProfile.this, NavDogList.class);
+            startActivity(intent);
         }
     }
 
