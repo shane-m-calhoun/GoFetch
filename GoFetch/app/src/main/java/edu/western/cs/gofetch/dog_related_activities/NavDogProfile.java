@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.NavHistory;
 import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
@@ -170,7 +170,7 @@ public class NavDogProfile extends AppCompatActivity
 //        } else if (id == R.id.nav_send) {
 //
         }else if (id == R.id.nav_help1) {
-            Intent intent = new Intent(NavDogProfile.this, Help.class);
+            Intent intent = new Intent(NavDogProfile.this, NavHelp.class);
             startActivity(intent);
             //Help
         }

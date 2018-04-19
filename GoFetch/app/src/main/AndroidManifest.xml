@@ -10,13 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--<activity android:name=".account_related_activities.MainActivity">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
+        <!-- <activity android:name=".account_related_activities.MainActivity"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity
             android:name=".dog_related_activities.NavDogList"
             android:label="GoFetch"
@@ -114,6 +116,10 @@
         <activity
             android:name=".NavHistoryPage"
             android:label="@string/title_activity_nav_history_page"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NavHelp"
+            android:label="@string/title_activity_nav_help"
             android:theme="@style/AppTheme"></activity>
     </application>
 

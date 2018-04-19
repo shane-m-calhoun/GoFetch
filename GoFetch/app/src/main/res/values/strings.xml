@@ -41,5 +41,6 @@
         REMEMBER: only do one lesson/session a day! Any more will actually slow down your dogs learning process. The lesson will still be fresh in the brain, but if you wait till the next day,
          it wont be as fresh, which will actually improve how well they will retain the information after the next lesson.
     </string>
+    <string name="title_activity_nav_help">NavHelp</string>
 
 </resources>

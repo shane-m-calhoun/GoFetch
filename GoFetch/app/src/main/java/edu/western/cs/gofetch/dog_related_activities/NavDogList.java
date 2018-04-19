@@ -22,7 +22,7 @@ import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
-import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.account_related_activities.MainActivity;
 import edu.western.cs.gofetch.adapter.CustomRealmAdapter;
@@ -182,7 +182,7 @@ public class NavDogList extends AppCompatActivity
             startActivity(intent);
             //Leaderboard
         } else if (id == R.id.nav_help) {
-            Intent intent = new Intent(NavDogList.this, Help.class);
+            Intent intent = new Intent(NavDogList.this, NavHelp.class);
             startActivity(intent);
             //Help
 //        } else if (id == R.id.nav_share) {

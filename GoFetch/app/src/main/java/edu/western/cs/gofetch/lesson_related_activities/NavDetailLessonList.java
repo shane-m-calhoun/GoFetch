@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.adapter.CustomAdapterL;
 import edu.western.cs.gofetch.createLessons.Advanced;
@@ -180,7 +180,7 @@ public class NavDetailLessonList extends AppCompatActivity
             //Leaderboard
 
         } else if (id == R.id.nav_detail_help) {
-            Intent intent = new Intent(NavDetailLessonList.this, Help.class);
+            Intent intent = new Intent(NavDetailLessonList.this, NavHelp.class);
             startActivity(intent);
             //Help
 

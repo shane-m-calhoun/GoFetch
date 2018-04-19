@@ -23,7 +23,7 @@
         <item
             android:id="@+id/nav_help1"
             android:icon="@drawable/ic_help_outline_black_24dp"
-            android:title="Help"
+            android:title="Why the Timer?"
             />
         <!--<item-->
             <!--android:id="@+id/nav_manage"-->

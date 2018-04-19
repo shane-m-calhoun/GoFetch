@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.NavSaveToHistory;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
@@ -260,7 +260,7 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
             Intent intent = new Intent(NavStartLesson.this, Leaderboard.class);
             startActivity(intent);
         } else if (id == R.id.nav_start_help) {
-            Intent intent = new Intent(NavStartLesson.this, Help.class);
+            Intent intent = new Intent(NavStartLesson.this, NavHelp.class);
             startActivity(intent);
         } //else if (id == R.id.nav_send) {
 
