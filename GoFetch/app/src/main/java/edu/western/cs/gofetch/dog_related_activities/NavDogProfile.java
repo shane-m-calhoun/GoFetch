@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.NavHistory;
 import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
@@ -135,9 +135,9 @@ public class NavDogProfile extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -152,25 +152,27 @@ public class NavDogProfile extends AppCompatActivity
             Intent intent = new Intent(NavDogProfile.this, NavDogList.class);
             startActivity(intent);
             //Go to Do List
-        } else if (id == R.id.nav_gallery) {
+        }   else if (id == R.id.nav_profile_add) {
             Intent intent = new Intent(NavDogProfile.this, AddDog.class);
+            intent.putExtra("method", "add");
             startActivity(intent);
-            //Add a dog
+            //Add Dog
+//
+        } else if (id == R.id.nav_profile_edit_dog) {
+            SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+            final String dogId = sharedPreferences.getString("dogID", "");
+
+            Intent intent = new Intent(NavDogProfile.this, AddDog.class);
+            intent.putExtra("method", "edit");
+            intent.putExtra("dogId", dogId);
+            startActivity(intent);
+            //Edit Dog Dog
         } else if (id == R.id.nav_slideshow) {
             Intent intent = new Intent(NavDogProfile.this, NavBasicLessonList.class);
             startActivity(intent);
             //Basic Lessons
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavDogProfile.this, Leaderboard.class);
-            startActivity(intent);
-            //Leaderboard
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
         }else if (id == R.id.nav_help1) {
-            Intent intent = new Intent(NavDogProfile.this, Help.class);
+            Intent intent = new Intent(NavDogProfile.this, NavHelp.class);
             startActivity(intent);
             //Help
         }

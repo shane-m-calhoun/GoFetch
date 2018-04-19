@@ -28,6 +28,7 @@ import edu.western.cs.gofetch.dog_related_activities.NavDogList;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
 import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
 import edu.western.cs.gofetch.lesson_related_activities.NavDetailLessonList;
+import edu.western.cs.gofetch.lesson_related_activities.NavStartLesson;
 import edu.western.cs.gofetch.model.Dog;
 import edu.western.cs.gofetch.model.History;
 import edu.western.cs.gofetch.model.Lesson;
@@ -156,9 +157,9 @@ public class NavSaveToHistory extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -175,11 +176,25 @@ public class NavSaveToHistory extends AppCompatActivity
         } else if (id == R.id.nav_save_go_list) {
             Intent intent = new Intent(NavSaveToHistory.this, NavDogList.class);
             startActivity(intent);
+        }else if (id == R.id.nav_save_add) {
+            Intent intent = new Intent(NavSaveToHistory.this, AddDog.class);
+            intent.putExtra("method", "add");
+            startActivity(intent);
+            //Add Dog
+        } else if (id == R.id.nav_save_edit_dog) {
+            SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+            final String dogId = sharedPreferences.getString("dogID", "");
+
+            Intent intent = new Intent(NavSaveToHistory.this, AddDog.class);
+            intent.putExtra("method", "edit");
+            intent.putExtra("dogId", dogId);
+            startActivity(intent);
+            //Edit Dog Dog
         } else if (id == R.id.nav_b_lesson) {
             Intent intent = new Intent(NavSaveToHistory.this, NavBasicLessonList.class);
             startActivity(intent);
-        } else if (id == R.id.nav_d_lesson) {
-            Intent intent = new Intent(NavSaveToHistory.this, NavDetailLessonList.class);
+        } else if (id == R.id.nav_save_to_history_help) {
+            Intent intent = new Intent(NavSaveToHistory.this, NavHelp.class);
             startActivity(intent);
 
         } //else if (id == R.id.nav_share) {

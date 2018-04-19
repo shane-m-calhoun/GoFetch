@@ -18,9 +18,10 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.NavSaveToHistory;
 import edu.western.cs.gofetch.R;
+import edu.western.cs.gofetch.dog_related_activities.AddDog;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
 import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
@@ -230,9 +231,9 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -247,20 +248,31 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
 //            Intent intent = new Intent(NavStartLesson.this, NavDetailLessonList.class);
 //            startActivity(intent);
 //            //Detailed Lessons
-        if (id == R.id.nav_start_basic_lessons) {
-            Intent intent = new Intent(NavStartLesson.this, NavBasicLessonList.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_start_profile) {
+        if (id == R.id.nav_start_profile) {
             Intent intent = new Intent(NavStartLesson.this, NavDogProfile.class);
             startActivity(intent);
-        } else if (id == R.id.nav_start_dog_list) {
+         }else if (id == R.id.nav_start_dog_list) {
             Intent intent = new Intent(NavStartLesson.this, NavDogList.class);
             startActivity(intent);
-        } else if (id == R.id.nav_start_leaderboard) {
-            Intent intent = new Intent(NavStartLesson.this, Leaderboard.class);
+        } else if (id == R.id.nav_start_add) {
+            Intent intent = new Intent(NavStartLesson.this, AddDog.class);
+            intent.putExtra("method", "add");
+            startActivity(intent);
+            //Add Dog
+        }else if (id == R.id.nav_start_edit_dog) {
+            SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+            final String dogId = sharedPreferences.getString("dogID", "");
+
+            Intent intent = new Intent(NavStartLesson.this, AddDog.class);
+            intent.putExtra("method", "edit");
+            intent.putExtra("dogId", dogId);
+            startActivity(intent);
+            //Edit Dog Dog
+        } else if (id == R.id.nav_start_basic_lessons) {
+            Intent intent = new Intent(NavStartLesson.this, NavBasicLessonList.class);
             startActivity(intent);
         } else if (id == R.id.nav_start_help) {
-            Intent intent = new Intent(NavStartLesson.this, Help.class);
+            Intent intent = new Intent(NavStartLesson.this, NavHelp.class);
             startActivity(intent);
         } //else if (id == R.id.nav_send) {
 

@@ -16,7 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.dog_related_activities.AddDog;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
@@ -116,9 +116,9 @@ public class NavBasicLessonList extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -150,13 +150,9 @@ public class NavBasicLessonList extends AppCompatActivity
             intent.putExtra("method", "edit");
             intent.putExtra("dogId", dogId);
             startActivity(intent);
-            //Add Dog
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavBasicLessonList.this, Leaderboard.class);
-            startActivity(intent);
-            //Leaderboard
-        }else if (id == R.id.nav_help2) {
-            Intent intent = new Intent(NavBasicLessonList.this, Help.class);
+            //Edit Dog Dog
+        } else if (id == R.id.nav_help2) {
+            Intent intent = new Intent(NavBasicLessonList.this, NavHelp.class);
             startActivity(intent);
             //Help
         } //else if (id == R.id.nav_share) {
