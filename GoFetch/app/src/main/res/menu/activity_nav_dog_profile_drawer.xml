@@ -9,17 +9,18 @@
             android:icon="@drawable/ic_list_black_24dp"
             android:title="Dog List" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_profile_add"
             android:icon="@drawable/ic_pets_black_24dp"
             android:title="Add Dog" />
+        <item
+            android:id="@+id/nav_profile_edit_dog"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Edit Dog" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_assignment_black_24dp"
             android:title="New Lesson" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_accessibility_black_24dp"
-            android:title="Leaderboard" />
+
         <item
             android:id="@+id/nav_help1"
             android:icon="@drawable/ic_help_outline_black_24dp"

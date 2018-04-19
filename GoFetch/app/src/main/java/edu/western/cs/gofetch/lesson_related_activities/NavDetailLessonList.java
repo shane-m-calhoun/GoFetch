@@ -1,6 +1,7 @@
 package edu.western.cs.gofetch.lesson_related_activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -27,6 +28,7 @@ import edu.western.cs.gofetch.createLessons.Advanced;
 import edu.western.cs.gofetch.createLessons.Beginner;
 import edu.western.cs.gofetch.createLessons.Intermediate;
 import edu.western.cs.gofetch.createLessons.Puppy;
+import edu.western.cs.gofetch.dog_related_activities.AddDog;
 import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
 import edu.western.cs.gofetch.leaderboard_related_activites.Leaderboard;
 import edu.western.cs.gofetch.model.Lesson;
@@ -165,19 +167,32 @@ public class NavDetailLessonList extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_basic_less_list) {
-            Intent intent = new Intent(NavDetailLessonList.this, NavBasicLessonList.class);
-            startActivity(intent);
-            //Basic Lessons
-        } else if (id == R.id.nav_d_profile) {
+        if (id == R.id.nav_d_profile) {
             Intent intent = new Intent(NavDetailLessonList.this, NavDogProfile.class);
             startActivity(intent);
             //Dog Profile
-        } else if (id == R.id.nav_detail_leaderboard) {
-            Intent intent = new Intent(NavDetailLessonList.this, Leaderboard.class);
+        }else if (id == R.id.nav_basic_less_list) {
+            Intent intent = new Intent(NavDetailLessonList.this, NavBasicLessonList.class);
             startActivity(intent);
-            //Leaderboard
+            //Basic Lessons
+        } else if (id == R.id.nav_detail_add_dog) {
+            Intent intent = new Intent(NavDetailLessonList.this, AddDog.class);
+            intent.putExtra("method", "add");
+            startActivity(intent);
+            //Add Dog
+        }else if (id == R.id.nav_detail_edit_dog) {
+            SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+            final String dogId = sharedPreferences.getString("dogID", "");
+
+            Intent intent = new Intent(NavDetailLessonList.this, AddDog.class);
+            intent.putExtra("method", "edit");
+            intent.putExtra("dogId", dogId);
+            startActivity(intent);
+            //Edit Dog Dog
+        } else if (id == R.id.nav_basic_less_list) {
+            Intent intent = new Intent(NavDetailLessonList.this, NavBasicLessonList.class);
+            startActivity(intent);
+            //Help
 
         } else if (id == R.id.nav_detail_help) {
             Intent intent = new Intent(NavDetailLessonList.this, NavHelp.class);

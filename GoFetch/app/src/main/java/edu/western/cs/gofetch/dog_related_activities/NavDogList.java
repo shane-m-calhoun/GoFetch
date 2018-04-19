@@ -172,6 +172,7 @@ public class NavDogList extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             Intent intent = new Intent(NavDogList.this, AddDog.class);
+            intent.putExtra("method", "add");
             startActivity(intent);
             // Handle the camera action
 

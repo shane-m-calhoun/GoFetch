@@ -150,12 +150,8 @@ public class NavBasicLessonList extends AppCompatActivity
             intent.putExtra("method", "edit");
             intent.putExtra("dogId", dogId);
             startActivity(intent);
-            //Add Dog
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavBasicLessonList.this, Leaderboard.class);
-            startActivity(intent);
-            //Leaderboard
-        }else if (id == R.id.nav_help2) {
+            //Edit Dog Dog
+        } else if (id == R.id.nav_help2) {
             Intent intent = new Intent(NavBasicLessonList.this, NavHelp.class);
             startActivity(intent);
             //Help

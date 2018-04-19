@@ -13,13 +13,21 @@
             android:icon="@drawable/ic_list_black_24dp"
             android:title="Dog List" />
         <item
+            android:id="@+id/nav_save_add"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Add Dog" />
+        <item
+            android:id="@+id/nav_save_edit_dog"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Edit Dog" />
+        <item
             android:id="@+id/nav_b_lesson"
             android:icon="@drawable/ic_list_black_24dp"
-            android:title="Basic Lessons" />
+            android:title="New Lessons" />
         <item
-            android:id="@+id/nav_d_lesson"
-            android:icon="@drawable/ic_list_black_24dp"
-            android:title="Detailed Lessons" />
+            android:id="@+id/nav_save_to_history_help"
+            android:icon="@drawable/ic_help_outline_black_24dp"
+            android:title="Why The Timer?" />
     </group>
 
     <!--<item android:title="Communicate">-->
