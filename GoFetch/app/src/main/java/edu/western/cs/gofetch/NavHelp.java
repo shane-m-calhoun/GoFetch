@@ -1,6 +1,5 @@
 package edu.western.cs.gofetch;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,34 +12,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
 
-import edu.western.cs.gofetch.model.History;
-import edu.western.cs.gofetch.model.Lesson;
-import io.realm.Realm;
-import io.realm.RealmResults;
-
-public class NavHistoryPage extends AppCompatActivity
+public class NavHelp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_history_page);
+        setContentView(R.layout.activity_nav_help);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -50,58 +40,6 @@ public class NavHistoryPage extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        TextView title = findViewById(R.id.textView_title);
-        TextView level = findViewById(R.id.textView_level);
-        TextView date = findViewById(R.id.textView_date);
-        TextView time = findViewById(R.id.textView_time);
-        TextView performance = findViewById(R.id.textView_performance);
-        TextView notes = findViewById(R.id.textView_notes);
-        Button back = findViewById(R.id.button_allHistory);
-        
-        String lessonLevel;
-
-        Intent intent = getIntent();
-        final String lessonId = intent.getStringExtra("lessonId");
-
-        realm = Realm.getDefaultInstance();
-
-        History history= realm.where(History.class).equalTo("id", lessonId).findFirst();
-
-        switch (history.getLessonLevel()){
-            case "0":
-                lessonLevel = "Puppy Lesson";
-                break;
-            case "1":
-                lessonLevel = "Beginner Lesson";
-                break;
-            case "2":
-                lessonLevel = "Intermediate Lesson";
-                break;
-            case "3":
-                lessonLevel = "Advanced Lesson";
-                break;
-            default:
-                lessonLevel = "";
-                break;
-
-        }
-
-        title.setText(history.getLessonTitle());
-        level.setText(lessonLevel);
-        date.setText(history.getDate());
-        time.setText(history.getTime());
-        performance.setText(history.getPointsReceived() +"pts. Received\n" + "Performance: " + history.getPerformanceLevel());
-        notes.setText(history.getSessionNotes());
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(NavHistoryPage.this, NavHistory.class);
-                startActivity(i);
-            }
-        });
-
     }
 
     @Override
@@ -117,7 +55,7 @@ public class NavHistoryPage extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nav_history_page, menu);
+        getMenuInflater().inflate(R.menu.nav_help, menu);
         return true;
     }
 

@@ -22,7 +22,7 @@ import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
-import edu.western.cs.gofetch.Help;
+import edu.western.cs.gofetch.NavHelp;
 import edu.western.cs.gofetch.R;
 //import edu.western.cs.gofetch.account_related_activities.MainActivity;
 import edu.western.cs.gofetch.adapter.CustomRealmAdapter;
@@ -150,9 +150,9 @@ public class NavDogList extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
         switch (item.getItemId()) {
             case R.id.add_dog:
                 Intent intent = new Intent(NavDogList.this, AddDog.class);
@@ -172,10 +172,11 @@ public class NavDogList extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             Intent intent = new Intent(NavDogList.this, AddDog.class);
+            intent.putExtra("method", "add");
             startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_help) {
-            Intent intent = new Intent(NavDogList.this, Help.class);
+            Intent intent = new Intent(NavDogList.this, NavHelp.class);
             startActivity(intent);
             //Help
 //        } else if (id == R.id.nav_share) {
