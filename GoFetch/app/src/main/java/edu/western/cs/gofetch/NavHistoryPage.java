@@ -91,7 +91,7 @@ public class NavHistoryPage extends AppCompatActivity
         level.setText(lessonLevel);
         date.setText(history.getDate());
         time.setText(history.getTime());
-        performance.setText("Performance: " + history.getPerformanceLevel());
+        performance.setText(history.getPointsReceived() +"pts. Received\n" + "Performance: " + history.getPerformanceLevel());
         notes.setText(history.getSessionNotes());
 
         back.setOnClickListener(new View.OnClickListener() {

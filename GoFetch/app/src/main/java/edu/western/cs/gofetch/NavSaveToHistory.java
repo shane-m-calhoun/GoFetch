@@ -37,9 +37,12 @@ public class NavSaveToHistory extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private TextView title;
+    private TextView points;
     private Spinner spinner;
     private EditText editText;
     private Button button;
+
+    private String pointsReceived;
 
     private Realm realm;
 
@@ -72,6 +75,7 @@ public class NavSaveToHistory extends AppCompatActivity
         Intent intent = getIntent();
         final String lessonTitle = intent.getStringExtra("lessonTitle");
         final String lessonLevel = intent.getStringExtra("lessonLevel");
+        pointsReceived = intent.getStringExtra("pointsReceived");
 
         SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
         final String dogId = sharedPreferences.getString("dogID", "");
@@ -80,11 +84,14 @@ public class NavSaveToHistory extends AppCompatActivity
 //        final Dog dog = realm.where(Dog.class).equalTo("id", dogId).findFirst();
 
         title = findViewById(R.id.save_to_history_title);
+        points = findViewById(R.id.save_to_history_points);
         spinner = findViewById(R.id.save_history_spinner);
         editText  =findViewById(R.id.save_history_edit);
         button = findViewById(R.id.save_history_button);
 
         title.setText(lessonTitle);
+
+        points.setText(pointsReceived + "pts. Received");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +110,7 @@ public class NavSaveToHistory extends AppCompatActivity
                 history.setDogId(dogId);
                 history.setLessonTitle(lessonTitle);
                 history.setLessonLevel(lessonLevel);
+                history.setPointsReceived(pointsReceived);
                 history.setPerformanceLevel(performance);
                 history.setSessionNotes(text);
                 history.setDate(date);

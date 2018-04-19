@@ -16,6 +16,7 @@ public class History extends RealmObject implements Serializable {
         private String dogId;
         private String lessonTitle;
         private String lessonLevel;
+        private String pointsReceived;
         private String performanceLevel;
         private String sessionNotes;
         private String date;
@@ -47,6 +48,13 @@ public class History extends RealmObject implements Serializable {
         }
         public void setLessonLevel(String lessonLevel){
             this.lessonLevel = lessonLevel;
+        }
+
+        public String getPointsReceived(){
+            return pointsReceived;
+        }
+        public void setPointsReceived(String pointsReceived){
+            this.pointsReceived = pointsReceived;
         }
 
         public String getPerformanceLevel(){

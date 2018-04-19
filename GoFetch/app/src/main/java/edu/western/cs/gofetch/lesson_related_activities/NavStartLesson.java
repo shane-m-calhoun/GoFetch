@@ -110,6 +110,7 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
                 addedPoints = 100;
                 break;
             default:
+                addedPoints = 0;
                 break;
 
         }
@@ -129,23 +130,20 @@ public class NavStartLesson extends AppCompatActivity implements NavigationView.
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(timeLeft <= originalTime/2 && timeLeft > 60000) {
-
-                    realm.beginTransaction();
-                    dog.setPoints(points + addedPoints/2);
-                    realm.commitTransaction();
-
-                } else if(timeLeft <= 60000){
-
-                    realm.beginTransaction();
-                    dog.setPoints(points + addedPoints);
-                    realm.commitTransaction();
-
+                if(timeLeft > originalTime/2){
+                    addedPoints = 0;
+                } else if(timeLeft <= originalTime/2 && timeLeft > 60000) {
+                    addedPoints = addedPoints/2;
                 }
+
+                realm.beginTransaction();
+                dog.setPoints(points + addedPoints);
+                realm.commitTransaction();
 
                 Intent i = new Intent(NavStartLesson.this, NavSaveToHistory.class);
                 i.putExtra("lessonTitle", title);
                 i.putExtra("lessonLevel", level);
+                i.putExtra("pointsReceived", String.valueOf(addedPoints));
 
                 startActivity(i);
             }
