@@ -11,6 +11,6 @@
         android:id="@+id/lesson_title"
         android:textColor="@color/Black"
         android:layout_height="50dp"
-        android:background="@color/DarkGrey"/>
+        />
 
 </LinearLayout>

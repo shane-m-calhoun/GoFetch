@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import edu.western.cs.gofetch.NavHelp;
+import edu.western.cs.gofetch.NavSaveToHistory;
 import edu.western.cs.gofetch.R;
 import edu.western.cs.gofetch.dog_related_activities.AddDog;
 import edu.western.cs.gofetch.dog_related_activities.NavDogList;
@@ -96,7 +97,8 @@ public class NavBasicLessonList extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(NavBasicLessonList.this, NavDogProfile.class);
+            startActivity(intent);
         }
     }
 
