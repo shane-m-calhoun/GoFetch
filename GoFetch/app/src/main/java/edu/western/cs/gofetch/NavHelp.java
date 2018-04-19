@@ -1,5 +1,7 @@
 package edu.western.cs.gofetch;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +15,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import edu.western.cs.gofetch.dog_related_activities.AddDog;
+import edu.western.cs.gofetch.dog_related_activities.NavDogList;
+import edu.western.cs.gofetch.dog_related_activities.NavDogProfile;
+import edu.western.cs.gofetch.lesson_related_activities.NavBasicLessonList;
+
 public class NavHelp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,14 +30,14 @@ public class NavHelp extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,18 +87,29 @@ public class NavHelp extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_help_profile) {
+            Intent intent = new Intent(NavHelp.this, NavDogProfile.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_help_list) {
+            Intent intent = new Intent(NavHelp.this, NavDogList.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_help_add) {
+            Intent intent = new Intent(NavHelp.this, AddDog.class);
+            intent.putExtra("method", "add");
+            startActivity(intent);
+            //Add Dog
+        } else if (id == R.id.nav_help_edit_dog) {
+            SharedPreferences sharedPreferences = getSharedPreferences("share_dog", MODE_PRIVATE);
+            final String dogId = sharedPreferences.getString("dogID", "");
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            Intent intent = new Intent(NavHelp.this, AddDog.class);
+            intent.putExtra("method", "edit");
+            intent.putExtra("dogId", dogId);
+            startActivity(intent);
+            //Edit Dog Dog
+        } else if (id == R.id.nav_help_new_lesson) {
+            Intent intent = new Intent(NavHelp.this, NavBasicLessonList.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

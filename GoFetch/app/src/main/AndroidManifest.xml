@@ -107,19 +107,19 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".NavSaveToHistory"
-            android:label="@string/title_activity_nav_save_to_history"
+            android:label="Save To History"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".NavHistory"
-            android:label="@string/title_activity_nav_history"
+            android:label="History"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".NavHistoryPage"
-            android:label="@string/title_activity_nav_history_page"
+            android:label="History Page"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".NavHelp"
-            android:label="@string/title_activity_nav_help"
+            android:label="Why The Timer?"
             android:theme="@style/AppTheme"></activity>
     </application>
 
