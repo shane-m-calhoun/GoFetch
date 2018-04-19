@@ -116,7 +116,8 @@ public class NavHistory extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(NavHistory.this, NavDogProfile.class);
+            startActivity(intent);
         }
     }
 
