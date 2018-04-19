@@ -116,6 +116,7 @@ public class NavDogList extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NavDogList.this, AddDog.class);
+                intent.putExtra("method", "add");
                 startActivity(intent);
             }//OnClick
         });//setOnClickListener
