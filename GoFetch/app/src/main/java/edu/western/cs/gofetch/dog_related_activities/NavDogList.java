@@ -150,9 +150,9 @@ public class NavDogList extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
         switch (item.getItemId()) {
             case R.id.add_dog:
                 Intent intent = new Intent(NavDogList.this, AddDog.class);
@@ -174,13 +174,7 @@ public class NavDogList extends AppCompatActivity
             Intent intent = new Intent(NavDogList.this, AddDog.class);
             startActivity(intent);
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(NavDogList.this, MainActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(NavDogList.this, Leaderboard.class);
-            startActivity(intent);
-            //Leaderboard
+
         } else if (id == R.id.nav_help) {
             Intent intent = new Intent(NavDogList.this, NavHelp.class);
             startActivity(intent);
