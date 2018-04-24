@@ -71,7 +71,7 @@ public class NavDogProfile extends AppCompatActivity
         TextView weight = findViewById(R.id.profile_weight_data);
 
 
-        int lvl = (int)Math.round(dog.getPoints())/100 + 1;
+        int lvl = (int)dog.getPoints()/100 + 1;
 
 
         name.setText(dog.getFirst_name());
